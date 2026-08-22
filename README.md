@@ -50,9 +50,32 @@ EXPERIENCIA ENTERPRISE × ARQUITECTURA × BANKING × CLOUD × AI/GENAI
 | [docs/TESTING.md](docs/TESTING.md) | Estrategia de testing |
 | [docs/ADR/](docs/ADR/) | Architecture Decision Records |
 
+## App web
+
+La presentación profesional (landing de perfil) vive en [`web/`](web/) y se publica en
+[gabrielalejandroarroyo.github.io/gabriel-career-evolution-os](https://gabrielalejandroarroyo.github.io/gabriel-career-evolution-os).
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+Abrí [http://localhost:3000](http://localhost:3000) para la versión en español y `/en` para la de inglés.
+
+| Dónde | Qué se edita |
+|---|---|
+| `web/src/data/profile.ts` | Contacto, niveles de skill, stack, credenciales |
+| `web/src/i18n/es.ts` · `en.ts` | Todos los textos, tipados contra `i18n/types.ts` |
+| `web/src/app/globals.css` | Tokens de color, escala tipográfica, motion |
+
+El despliegue es automático: cada push a `main` que toque `web/` dispara
+[.github/workflows/deploy.yml](.github/workflows/deploy.yml), que hace lint, typecheck,
+export estático y publica en GitHub Pages.
+
 ## Estado del proyecto
 
-**Fase actual:** Planificación y documentación oficial.  
+**Fase actual:** Documentación oficial + página de presentación de perfil.  
 **Próximo paso:** Slice 1 — Auth · Professional Profile · Skills Matrix · Dashboard.
 
 ## Slices de implementación

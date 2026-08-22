@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------
+   Design tokens
+   Semantic names only. Light values on :root, dark overrides below.
+   --------------------------------------------------------------- */
+
+:root {
+  --bg: #fafaf9;
+  --bg-elevated: #ffffff;
+  --bg-inset: #f1f0ee;
+  --bg-invert: #0c0d10;
+
+  --fg: #16171a;
+  --fg-muted: #55565c;
+  --fg-subtle: #7c7d84;
+  --fg-invert: #f7f7f6;
+
+  --border: #e2e1dd;
+  --border-strong: #c9c8c3;
+
+  --accent: #0d6d6d;
+  --accent-hover: #0a5555;
+  --accent-fg: #ffffff;
+  --accent-subtle: #e2f1f0;
+
+  --highlight: #b4501f;
+  --highlight-soft: #d98a5c;
+
+  --ring: #0d6d6d;
+
+  --grid-line: rgba(22, 23, 26, 0.07);
+}
+
+.dark {
+  --bg: #0c0d10;
+  --bg-elevated: #14161a;
+  --bg-inset: #1a1d22;
+  --bg-invert: #f7f7f6;
+
+  --fg: #f2f3f4;
+  --fg-muted: #a2a5ad;
+  --fg-subtle: #7d818a;
+  --fg-invert: #0c0d10;
+
+  --border: #262930;
+  --border-strong: #3a3e47;
+
+  --accent: #2fb3ab;
+  --accent-hover: #4fc9c1;
+  --accent-fg: #06201f;
+  --accent-subtle: #10312f;
+
+  --highlight: #e08a5a;
+  --highlight-soft: #b4501f;
+
+  --ring: #2fb3ab;
+
+  --grid-line: rgba(242, 243, 244, 0.06);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-inset: var(--bg-inset);
+  --color-bg-invert: var(--bg-invert);
+
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --color-fg-invert: var(--fg-invert);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-subtle: var(--accent-subtle);
+
+  --color-highlight: var(--highlight);
+  --color-highlight-soft: var(--highlight-soft);
+
+  --font-display: var(--font-syne);
+  --font-sans: var(--font-figtree);
+  --font-mono: var(--font-plex);
+
+  /* Fluid type scale: no hard breakpoints, scales with viewport. */
+  --text-hero: clamp(2.75rem, 1.2rem + 7vw, 6.5rem);
+  --text-hero--line-height: 0.94;
+  --text-display: clamp(2rem, 1.1rem + 3.6vw, 3.5rem);
+  --text-display--line-height: 1.08;
+  --text-title: clamp(1.375rem, 1.05rem + 1.4vw, 2rem);
+  --text-title--line-height: 1.2;
+  --text-lead: clamp(1.0625rem, 0.98rem + 0.42vw, 1.3125rem);
+  --text-lead--line-height: 1.6;
+
+  /* 8px spacing scale extensions */
+  --spacing-section: clamp(4.5rem, 3rem + 6vw, 9rem);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--accent-fg);
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
+}
+
+@utility font-mono {
+  font-family: var(--font-plex), ui-monospace, monospace;
+}
+
+/* Eyebrow label used above every section heading. */
+@utility eyebrow {
+  font-family: var(--font-plex), ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------------
+   Motion
+   Every animation below is disabled under prefers-reduced-motion.
+   --------------------------------------------------------------- */
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes grid-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 56px 56px;
+  }
+}
+
+@keyframes expand-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.enter {
+  animation: fade-rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rule-grow {
+  transform-origin: left;
+  animation: expand-x 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+
+.blueprint-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 56px 56px;
+  animation: grid-drift 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .enter,
+  .rule-grow,
+  .blueprint-grid {
+    animation: none !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
