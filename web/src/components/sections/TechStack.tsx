@@ -3,27 +3,37 @@ import { techStack } from "@/data/profile";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section, SectionHeading } from "@/components/ui/Section";
 
-export function TechStack({ dict }: { dict: Dictionary }) {
+export function TechStack({
+  dict,
+  embedded = false,
+}: {
+  dict: Dictionary;
+  embedded?: boolean;
+}) {
   const copy = dict.stack;
-
-  return (
-    <Section className="border-t border-border bg-bg-inset">
+  const body = (
+    <>
       <SectionHeading
         eyebrow={copy.eyebrow}
         heading={copy.heading}
         intro={copy.intro}
+        compact={embedded}
       />
 
-      <dl className="mt-12">
+      <dl className={embedded ? "mt-5" : "mt-12"}>
         {techStack.map((group, index) => (
-          <Reveal key={group.id} delay={index * 50}>
-            <div className="grid gap-3 border-t border-border py-6 md:grid-cols-[200px_1fr] md:gap-8">
+          <Reveal key={group.id} delay={index * 40}>
+            <div
+              className={`grid gap-2 border-t border-border md:grid-cols-[160px_1fr] md:gap-6 ${
+                embedded ? "py-3.5" : "gap-3 py-6 md:gap-8"
+              }`}
+            >
               <dt className="eyebrow text-fg-subtle">{copy.groups[group.id]}</dt>
-              <dd className="flex flex-wrap gap-2">
+              <dd className="flex flex-wrap gap-1.5">
                 {group.items.map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-border bg-bg-elevated px-3.5 py-1.5 text-sm text-fg"
+                    className="rounded-full border border-border bg-bg-elevated px-3 py-1 text-sm text-fg"
                   >
                     {item}
                   </span>
@@ -33,6 +43,9 @@ export function TechStack({ dict }: { dict: Dictionary }) {
           </Reveal>
         ))}
       </dl>
-    </Section>
+    </>
   );
+
+  if (embedded) return <div className="border-t border-border pt-8">{body}</div>;
+  return <Section className="border-t border-border bg-bg-inset">{body}</Section>;
 }

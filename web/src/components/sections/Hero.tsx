@@ -12,7 +12,7 @@ export function Hero({ dict }: { dict: Dictionary }) {
 
       <BlueprintArtwork />
 
-      <div className="mx-auto w-full max-w-6xl px-6 pt-20 pb-24 md:px-10 md:pt-28 md:pb-32">
+      <div className="mx-auto w-full max-w-6xl px-6 pt-14 pb-16 md:px-10 md:pt-20 md:pb-20">
         <div className="max-w-3xl">
           <p className="enter inline-flex items-center gap-2.5 rounded-full border border-border bg-bg-elevated/70 px-3.5 py-1.5">
             <span className="relative flex size-2">
@@ -24,30 +24,30 @@ export function Hero({ dict }: { dict: Dictionary }) {
             </span>
           </p>
 
-          <h1 className="enter mt-7 font-display text-hero font-extrabold tracking-[var(--text-hero--letter-spacing)] text-balance">
+          <h1 className="enter mt-5 font-display text-hero font-extrabold tracking-[var(--text-hero--letter-spacing)] text-balance">
             {identity.shortName}
           </h1>
 
-          <div className="rule-grow mt-6 h-0.5 w-28 bg-highlight" />
+          <div className="rule-grow mt-4 h-0.5 w-24 bg-highlight" />
 
-          <p className="enter mt-6 font-display text-title font-semibold tracking-[var(--text-title--letter-spacing)] text-fg">
+          <p className="enter mt-4 font-display text-title font-semibold tracking-[var(--text-title--letter-spacing)] text-fg">
             {dict.hero.role}
           </p>
 
-          <p className="enter mt-5 max-w-2xl text-lead text-fg-muted text-pretty">
+          <p className="enter mt-4 max-w-2xl text-lead text-fg-muted text-pretty">
             {dict.hero.tagline}
           </p>
 
-          <div className="enter mt-10 flex flex-wrap gap-3">
+          <div className="enter mt-7 flex flex-wrap gap-3">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-fg transition hover:bg-accent-hover"
+              className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-fg transition hover:bg-accent-hover"
             >
               {dict.hero.primaryCta}
             </a>
             <a
               href="#expertise"
-              className="inline-flex items-center justify-center rounded-full border border-border-strong px-7 py-3.5 text-sm font-semibold text-fg transition hover:bg-bg-inset"
+              className="inline-flex items-center justify-center rounded-full border border-border-strong px-6 py-3 text-sm font-semibold text-fg transition hover:bg-bg-inset"
             >
               {dict.hero.secondaryCta}
             </a>
@@ -58,10 +58,6 @@ export function Hero({ dict }: { dict: Dictionary }) {
   );
 }
 
-/**
- * Decorative elevation drawing that echoes an architecture blueprint. Purely
- * ornamental, so it is hidden from assistive technology.
- */
 function BlueprintArtwork() {
   return (
     <svg

@@ -14,14 +14,15 @@ export function Projects({ dict }: { dict: Dictionary }) {
   const activeCopy = active ? copy.items[active.id] : null;
 
   return (
-    <Section id="portfolio" className="border-t border-border bg-bg-inset">
+    <Section id="portfolio" density="compact" className="border-t border-border bg-bg-inset">
       <SectionHeading
         eyebrow={copy.eyebrow}
         heading={copy.heading}
         intro={copy.intro}
+        compact
       />
 
-      <ul className="mt-12 grid gap-4 md:grid-cols-2">
+      <ul className="mt-8 grid gap-3 md:grid-cols-2">
         {projects.map((project, index) => {
           const item = copy.items[project.id];
           const isActive = activeId === project.id;

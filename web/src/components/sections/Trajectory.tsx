@@ -3,21 +3,31 @@ import { trajectory } from "@/data/profile";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section, SectionHeading } from "@/components/ui/Section";
 
-export function Trajectory({ dict }: { dict: Dictionary }) {
+export function Trajectory({
+  dict,
+  embedded = false,
+}: {
+  dict: Dictionary;
+  embedded?: boolean;
+}) {
   const copy = dict.trajectory;
-
-  return (
-    <Section id="experience">
+  const body = (
+    <>
       <SectionHeading
         eyebrow={copy.eyebrow}
         heading={copy.heading}
         intro={copy.intro}
+        compact={embedded}
       />
 
-      <ol className="mt-14">
+      <ol className={embedded ? "mt-5" : "mt-14"}>
         {trajectory.map((step, index) => (
-          <Reveal key={step.id} delay={index * 45}>
-            <li className="grid grid-cols-[3rem_1fr] items-baseline gap-4 border-t border-border py-5 last:border-b">
+          <Reveal key={step.id} delay={index * 30}>
+            <li
+              className={`grid grid-cols-[2.5rem_1fr] items-baseline gap-3 border-t border-border last:border-b ${
+                embedded ? "py-3" : "grid-cols-[3rem_1fr] gap-4 py-5"
+              }`}
+            >
               <span
                 className={`font-mono text-sm ${
                   step.isTarget ? "text-highlight" : "text-fg-subtle"
@@ -25,11 +35,11 @@ export function Trajectory({ dict }: { dict: Dictionary }) {
               >
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <span
-                  className={`font-display text-xl font-semibold md:text-2xl ${
-                    step.isTarget ? "text-highlight" : "text-fg"
-                  }`}
+                  className={`font-display font-semibold ${
+                    embedded ? "text-lg" : "text-xl md:text-2xl"
+                  } ${step.isTarget ? "text-highlight" : "text-fg"}`}
                 >
                   {copy.steps[step.id]}
                 </span>
@@ -43,6 +53,9 @@ export function Trajectory({ dict }: { dict: Dictionary }) {
           </Reveal>
         ))}
       </ol>
-    </Section>
+    </>
   );
+
+  if (embedded) return <div className="border-t border-border pt-8">{body}</div>;
+  return <Section id="experience">{body}</Section>;
 }

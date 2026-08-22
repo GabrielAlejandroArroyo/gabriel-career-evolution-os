@@ -67,13 +67,29 @@ export type Dictionary = {
     eyebrow: string;
     heading: string;
     intro: string;
+    expand: string;
+    collapse: string;
     challengeLabel: string;
     approachLabel: string;
     outcomeLabel: string;
     items: Record<
       CapabilityId,
-      { title: string; challenge: string; approach: string; outcome: string }
+      {
+        title: string;
+        teaser: string;
+        challenge: string;
+        approach: string;
+        outcome: string;
+      }
     >;
+  };
+
+  experience: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    expand: string;
+    collapse: string;
   };
 
   skills: {
@@ -132,6 +148,8 @@ export type Dictionary = {
     eyebrow: string;
     heading: string;
     intro: string;
+    expand: string;
+    collapse: string;
     locationLabel: string;
     companyLabel: string;
     educationLabel: string;

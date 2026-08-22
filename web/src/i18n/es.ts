@@ -54,13 +54,16 @@ export const es: Dictionary = {
     eyebrow: "Qué resuelvo",
     heading: "Los problemas que me traen a la mesa",
     intro:
-      "No son proyectos de portfolio: son las situaciones que vengo resolviendo hace dos décadas en banca, energía, seguros y retail.",
+      "Resumen de lo que resuelvo. Expandí cualquiera para ver problema, enfoque y resultado.",
+    expand: "Ver detalle",
+    collapse: "Ocultar",
     challengeLabel: "El problema",
     approachLabel: "Mi enfoque",
     outcomeLabel: "El resultado",
     items: {
       legacyModernization: {
         title: "Modernización de sistemas legacy",
+        teaser: "Migración por etapas sin apagar lo que hoy factura.",
         challenge:
           "Aplicaciones que sostienen el negocio hace 15 años, sin documentación viva, donde cada cambio asusta y nadie quiere firmar la migración.",
         approach:
@@ -70,6 +73,7 @@ export const es: Dictionary = {
       },
       enterpriseIntegration: {
         title: "Integración entre sistemas que no fueron pensados para hablarse",
+        teaser: "Contratos explícitos, errores visibles y trazabilidad auditable.",
         challenge:
           "Core bancario, ERP, gestión documental, servicios externos y procesos batch que deben coordinarse sin perder consistencia ni trazabilidad.",
         approach:
@@ -79,6 +83,7 @@ export const es: Dictionary = {
       },
       bankingCore: {
         title: "Arquitectura sobre sistemas bancarios y transaccionales",
+        teaser: "Consistencia e idempotencia donde el error es dinero real.",
         challenge:
           "Plataformas donde una inconsistencia no es un bug: es dinero real, un cierre contable roto y una respuesta al regulador.",
         approach:
@@ -88,6 +93,7 @@ export const es: Dictionary = {
       },
       genAiAdoption: {
         title: "Adopción de IA generativa en contextos enterprise",
+        teaser: "RAG y agentes con límites de datos, no demos sueltas.",
         challenge:
           "Organizaciones que quieren aprovechar GenAI pero no pueden exponer datos sensibles ni sostener una demo que nunca llega a producción.",
         approach:
@@ -96,6 +102,15 @@ export const es: Dictionary = {
           "Capacidades de IA que se integran al stack existente con control de acceso y costo, en lugar de sumar otro silo.",
       },
     },
+  },
+
+  experience: {
+    eyebrow: "Profundidad",
+    heading: "Experiencia técnica bajo demanda",
+    intro:
+      "Skills, stack, trayectoria, industrias y formación. Cerrado por defecto para no alargar el scroll.",
+    expand: "Ver experiencia",
+    collapse: "Ocultar experiencia",
   },
 
   skills: {
@@ -302,7 +317,9 @@ export const es: Dictionary = {
     eyebrow: "Presencia profesional",
     heading: "Mi LinkedIn, integrado acá",
     intro:
-      "Lo esencial del perfil público, sin pedirte que abras otra pestaña. Headline, empresa, formación, certificaciones verificables y recomendaciones reales.",
+      "Resumen del perfil público. Expandí para about, credenciales y recomendaciones.",
+    expand: "Ver perfil completo",
+    collapse: "Ocultar detalle",
     locationLabel: "Ubicación",
     companyLabel: "Empresa actual",
     educationLabel: "Formación",
