@@ -19,8 +19,8 @@ export const en: Dictionary = {
   nav: {
     skipToContent: "Skip to content",
     expertise: "Expertise",
-    experience: "Path",
-    credentials: "Education",
+    portfolio: "Projects",
+    presence: "LinkedIn",
     contact: "Contact",
     toggleTheme: "Toggle theme",
   },
@@ -244,6 +244,83 @@ export const en: Dictionary = {
     },
   },
 
+  projects: {
+    eyebrow: "GitHub portfolio",
+    heading: "Projects you can explore without leaving this page",
+    intro:
+      "A curated set of public repositories that show architecture, integration and product work. Open any of them: the detail and the demo live right here.",
+    openPreview: "View on this page",
+    closePreview: "Close preview",
+    viewDemo: "Live demo",
+    languagesLabel: "Stack",
+    repoHint: "Code on GitHub (optional)",
+    items: {
+      careerOs: {
+        title: "Gabriel Career Evolution OS",
+        summary:
+          "Personal career evolution platform and this bilingual landing.",
+        detail:
+          "Next.js 16, TypeScript and static export to GitHub Pages. Includes a design system, typed i18n and sections built for recruiter conversion toward architecture roles.",
+      },
+      catalogs: {
+        title: "Catalog Builder",
+        summary:
+          "Angular + FastAPI app to build code catalogs from master data.",
+        detail:
+          "Frontend published on GitHub Pages with CI/CD. The FastAPI backend runs locally; the UI demonstrates the catalog flow, specs-based versioning and automated releases.",
+      },
+      hexagonal: {
+        title: "Hexagonal Architecture in Java",
+        summary: "Clean Architecture / hexagonal reference with Spring Boot.",
+        detail:
+          "Organizes domain, application and infrastructure with dependency inversion. Concrete evidence of how I apply explicit boundaries beyond a diagram.",
+      },
+      middleware: {
+        title: "Middleware Designer",
+        summary:
+          "Middleware design that reads service OpenAPI/Swagger and orchestrates MFEs.",
+        detail:
+          "Monorepo conventions for services, middleware and Angular microfrontends. Focused on integration contracts and day-to-day architecture rules.",
+      },
+      springMicroservices: {
+        title: "Spring Microservices",
+        summary: "Spring microservices base for service composition.",
+        detail:
+          "Practical exploration of configuration, services and integration patterns in the Spring ecosystem, aligned with real enterprise scenarios.",
+      },
+      transportAgenda: {
+        title: "Transport Agenda",
+        summary: "Transport scheduling system with Java backend and TypeScript front.",
+        detail:
+          "End-to-end solution for logistics scheduling. Complements a TypeScript front with a Java backend oriented to operational domain.",
+      },
+    },
+  },
+
+  presence: {
+    eyebrow: "Professional presence",
+    heading: "My LinkedIn, embedded here",
+    intro:
+      "The essentials of the public profile, without asking you to open another tab. Headline, company, education, verifiable credentials and real recommendations.",
+    locationLabel: "Location",
+    companyLabel: "Current company",
+    educationLabel: "Education",
+    followersLabel: "Followers",
+    connectionsLabel: "Connections",
+    aboutLabel: "About",
+    about:
+      "Software and solution architect with hands-on experience in enterprise and transactional systems. .NET, Java, OpenText Documentum, Bizagi BPM, integration and legacy modernization. Today I bring that foundation into modern architecture, cloud and generative AI.",
+    highlightsLabel: "Credentials visible on LinkedIn",
+    recommendationsLabel: "Recommendations",
+    recommendations: {
+      bruno:
+        "When it comes to Documentum, Gabriel is a true expert. He knows every technical detail and stays current. If there is a problem, he solves it with creativity and effectiveness. Reliable, fit for the role and always ready for new challenges.",
+      karina:
+        "An excellent professional: responsible, proactive and always bringing initiatives around the latest technologies. Committed to goals and strong at teamwork.",
+    },
+    openExternally: "Open full profile on LinkedIn",
+  },
+
   contact: {
     eyebrow: "Next step",
     heading:
@@ -260,8 +337,8 @@ export const en: Dictionary = {
       "AI Solutions Architect",
     ],
     emailCta: "Email me",
-    linkedinCta: "LinkedIn",
-    githubCta: "GitHub",
+    presenceCta: "See LinkedIn presence",
+    portfolioCta: "See projects",
   },
 
   footer: {

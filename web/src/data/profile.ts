@@ -5,13 +5,12 @@
  * read identically in Spanish and English. Every translatable string lives in
  * `src/i18n`.
  *
- * TODO(gabriel): reemplazar los valores de `contact` por los reales antes de
- * publicar. Son los unicos placeholders del proyecto.
+ * TODO(gabriel): reemplazar `contact.email` por el real antes de publicar.
  */
 
 export const contact = {
   email: "gabriel.arroyo@example.com",
-  linkedin: "https://www.linkedin.com/in/gabriel-alejandro-arroyo",
+  linkedin: "https://www.linkedin.com/in/gabriel-arroyo-a7b289a",
   github: "https://github.com/GabrielAlejandroArroyo",
 } as const;
 
@@ -20,6 +19,93 @@ export const identity = {
   shortName: "Gabriel Arroyo",
   siteUrl: "https://gabrielalejandroarroyo.github.io/gabriel-career-evolution-os",
 } as const;
+
+/**
+ * LinkedIn presence mirrored on this page so recruiters don't need to leave.
+ * Sourced from the public profile; narrative headline comes from i18n.
+ */
+export const linkedInPresence = {
+  url: contact.linkedin,
+  location: "Argentina",
+  followers: 568,
+  connections: "500+",
+  currentCompany: "Accusys Technology",
+  education: "Universidad Argentina de la Empresa",
+  highlights: [
+    "Bizagi Certified Professional",
+    "EMC Content Management Foundations",
+    "EMC Technical Fundamental of Documentum (E20-120)",
+  ] as const,
+  recommendations: [
+    {
+      id: "bruno",
+      author: "Bruno Canalini Miguel",
+    },
+    {
+      id: "karina",
+      author: "Karina Lazo",
+    },
+  ] as const,
+} as const;
+
+export type ProjectId =
+  | "careerOs"
+  | "catalogs"
+  | "hexagonal"
+  | "middleware"
+  | "springMicroservices"
+  | "transportAgenda";
+
+/**
+ * Featured GitHub projects rendered on-page. Demo URLs open an in-page
+ * preview; repo URLs remain secondary so the visitor never has to leave.
+ */
+export const projects: {
+  id: ProjectId;
+  repo: string;
+  url: string;
+  demoUrl?: string;
+  languages: string[];
+}[] = [
+  {
+    id: "careerOs",
+    repo: "gabriel-career-evolution-os",
+    url: "https://github.com/GabrielAlejandroArroyo/gabriel-career-evolution-os",
+    demoUrl: "https://gabrielalejandroarroyo.github.io/gabriel-career-evolution-os/",
+    languages: ["TypeScript", "Next.js", "Tailwind"],
+  },
+  {
+    id: "catalogs",
+    repo: "creador_de_Catalogos",
+    url: "https://github.com/GabrielAlejandroArroyo/creador_de_Catalogos",
+    demoUrl: "https://gabrielalejandroarroyo.github.io/creador_de_Catalogos/",
+    languages: ["TypeScript", "Angular", "Python", "FastAPI"],
+  },
+  {
+    id: "hexagonal",
+    repo: "ArquitecturaHexagonalJava",
+    url: "https://github.com/GabrielAlejandroArroyo/ArquitecturaHexagonalJava",
+    languages: ["Java", "Spring Boot"],
+  },
+  {
+    id: "middleware",
+    repo: "MiddlewareDesigner",
+    url: "https://github.com/GabrielAlejandroArroyo/MiddlewareDesigner",
+    languages: ["TypeScript", "Python", "Angular"],
+  },
+  {
+    id: "springMicroservices",
+    repo: "SpringMicroservices",
+    url: "https://github.com/GabrielAlejandroArroyo/SpringMicroservices",
+    languages: ["Java", "Spring"],
+  },
+  {
+    id: "transportAgenda",
+    repo: "agendaDeTransporte",
+    url: "https://github.com/GabrielAlejandroArroyo/agendaDeTransporte",
+    languages: ["Java", "TypeScript"],
+  },
+];
 
 export const stats = {
   yearsExperience: 20,

@@ -2,6 +2,7 @@ import type {
   CapabilityId,
   CredentialId,
   IndustryId,
+  ProjectId,
   SkillDomainId,
   SkillId,
   StackGroupId,
@@ -32,8 +33,8 @@ export type Dictionary = {
   nav: {
     skipToContent: string;
     expertise: string;
-    experience: string;
-    credentials: string;
+    portfolio: string;
+    presence: string;
     contact: string;
     toggleTheme: string;
   };
@@ -115,6 +116,35 @@ export type Dictionary = {
     items: Record<CredentialId, { name: string; issuer: string }>;
   };
 
+  projects: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    openPreview: string;
+    closePreview: string;
+    viewDemo: string;
+    languagesLabel: string;
+    repoHint: string;
+    items: Record<ProjectId, { title: string; summary: string; detail: string }>;
+  };
+
+  presence: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    locationLabel: string;
+    companyLabel: string;
+    educationLabel: string;
+    followersLabel: string;
+    connectionsLabel: string;
+    aboutLabel: string;
+    about: string;
+    highlightsLabel: string;
+    recommendationsLabel: string;
+    recommendations: Record<"bruno" | "karina", string>;
+    openExternally: string;
+  };
+
   contact: {
     eyebrow: string;
     heading: string;
@@ -122,8 +152,8 @@ export type Dictionary = {
     rolesLabel: string;
     roles: string[];
     emailCta: string;
-    linkedinCta: string;
-    githubCta: string;
+    presenceCta: string;
+    portfolioCta: string;
   };
 
   footer: {

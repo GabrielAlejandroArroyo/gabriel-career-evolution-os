@@ -27,20 +27,16 @@ export function Contact({ dict }: { dict: Dictionary }) {
             {copy.emailCta}
           </a>
           <a
-            href={contact.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#presence"
             className="inline-flex items-center justify-center rounded-full border border-fg-invert/30 px-7 py-3.5 text-sm font-semibold transition hover:border-fg-invert/70"
           >
-            {copy.linkedinCta}
+            {copy.presenceCta}
           </a>
           <a
-            href={contact.github}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#portfolio"
             className="inline-flex items-center justify-center rounded-full border border-fg-invert/30 px-7 py-3.5 text-sm font-semibold transition hover:border-fg-invert/70"
           >
-            {copy.githubCta}
+            {copy.portfolioCta}
           </a>
         </div>
       </Reveal>

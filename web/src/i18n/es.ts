@@ -19,8 +19,8 @@ export const es: Dictionary = {
   nav: {
     skipToContent: "Ir al contenido",
     expertise: "Expertise",
-    experience: "Trayectoria",
-    credentials: "Formación",
+    portfolio: "Proyectos",
+    presence: "LinkedIn",
     contact: "Contacto",
     toggleTheme: "Cambiar tema",
   },
@@ -244,6 +244,84 @@ export const es: Dictionary = {
     },
   },
 
+  projects: {
+    eyebrow: "Portfolio en GitHub",
+    heading: "Proyectos que podés explorar sin salir de acá",
+    intro:
+      "Seleccioné repositorios públicos que muestran arquitectura, integración y producto. Abrí cualquiera: el detalle y la demo viven en esta misma página.",
+    openPreview: "Ver en la página",
+    closePreview: "Cerrar preview",
+    viewDemo: "Demo en vivo",
+    languagesLabel: "Stack",
+    repoHint: "Código en GitHub (opcional)",
+    items: {
+      careerOs: {
+        title: "Gabriel Career Evolution OS",
+        summary:
+          "Plataforma personal de evolución profesional y esta landing bilingüe.",
+        detail:
+          "Next.js 16, TypeScript y export estático a GitHub Pages. Incluye sistema de diseño, i18n tipado y secciones pensadas para conversión de recruiters hacia roles de arquitectura.",
+      },
+      catalogs: {
+        title: "Creador de Catálogos",
+        summary:
+          "App Angular + FastAPI para armar catálogos de códigos a partir de maestros.",
+        detail:
+          "Frontend publicado en GitHub Pages con CI/CD. El backend FastAPI corre en local; la UI demuestra el flujo de catálogos, versionado por specs y releases automáticos.",
+      },
+      hexagonal: {
+        title: "Arquitectura Hexagonal en Java",
+        summary:
+          "Referencia de Clean Architecture / hexagonal con Spring Boot.",
+        detail:
+          "Organiza dominio, aplicación e infraestructura con inversión de dependencias. Sirve como evidencia concreta de cómo aplico límites explícitos fuera de un diagrama.",
+      },
+      middleware: {
+        title: "Middleware Designer",
+        summary:
+          "Diseño de middleware que lee OpenAPI/Swagger de servicios y orquesta MFEs.",
+        detail:
+          "Monorepo con convenciones para services, middleware y microfrontends Angular. Enfocado en contratos de integración y reglas de arquitectura aplicadas en el día a día.",
+      },
+      springMicroservices: {
+        title: "Spring Microservices",
+        summary: "Base de microservicios Spring para composición de servicios.",
+        detail:
+          "Exploración práctica de configuración, servicios y patrones de integración en el ecosistema Spring, alineada a escenarios enterprise reales.",
+      },
+      transportAgenda: {
+        title: "Agenda de Transporte",
+        summary: "Sistema de agenda de transporte con backend Java y front TypeScript.",
+        detail:
+          "Solución end-to-end para gestión de agenda logística. Complementa el front en TypeScript con un backend Java orientado a dominio operacional.",
+      },
+    },
+  },
+
+  presence: {
+    eyebrow: "Presencia profesional",
+    heading: "Mi LinkedIn, integrado acá",
+    intro:
+      "Lo esencial del perfil público, sin pedirte que abras otra pestaña. Headline, empresa, formación, certificaciones verificables y recomendaciones reales.",
+    locationLabel: "Ubicación",
+    companyLabel: "Empresa actual",
+    educationLabel: "Formación",
+    followersLabel: "Seguidores",
+    connectionsLabel: "Contactos",
+    aboutLabel: "Acerca de",
+    about:
+      "Arquitecto de software y soluciones con experiencia hands-on en sistemas enterprise y transaccionales. .NET, Java, OpenText Documentum, Bizagi BPM, integración y modernización legacy. Hoy llevo esa base a arquitectura moderna, cloud e IA generativa.",
+    highlightsLabel: "Credenciales visibles en LinkedIn",
+    recommendationsLabel: "Recomendaciones",
+    recommendations: {
+      bruno:
+        "Cuando se trata de Documentum, Gabriel es un verdadero experto. Se sabe todos los detalles técnicos y está siempre actualizado. Si hay un problema, lo resuelve con creatividad y efectividad. Responsable, apto para el cargo y siempre listo para enfrentar nuevos desafíos.",
+      karina:
+        "Excelente profesional, responsable, proactivo y siempre con iniciativas en las últimas tecnologías. Comprometido con los objetivos y con gran capacidad de trabajo en equipo.",
+    },
+    openExternally: "Abrir perfil completo en LinkedIn",
+  },
+
   contact: {
     eyebrow: "Siguiente paso",
     heading:
@@ -260,8 +338,8 @@ export const es: Dictionary = {
       "AI Solutions Architect",
     ],
     emailCta: "Escribime",
-    linkedinCta: "LinkedIn",
-    githubCta: "GitHub",
+    presenceCta: "Ver presencia LinkedIn",
+    portfolioCta: "Ver proyectos",
   },
 
   footer: {

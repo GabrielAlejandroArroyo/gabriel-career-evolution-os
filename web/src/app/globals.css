@@ -90,20 +90,20 @@
   --font-mono: var(--font-mono-face);
 
   /*
-   * Fluid type scale tuned for Bricolage (display) + Plus Jakarta (body).
-   * Slightly airier line-heights than Syne/Figtree; Bricolage sits taller.
+   * Fluid type scale tuned for Fraunces (serif display) + Manrope (body).
+   * Serif display needs milder negative tracking than grotesques.
    */
-  --text-hero: clamp(2.85rem, 1.05rem + 7.4vw, 6.75rem);
-  --text-hero--line-height: 0.96;
-  --text-hero--letter-spacing: -0.04em;
-  --text-display: clamp(2.05rem, 1.05rem + 3.8vw, 3.65rem);
-  --text-display--line-height: 1.1;
-  --text-display--letter-spacing: -0.03em;
-  --text-title: clamp(1.4rem, 1.05rem + 1.5vw, 2.05rem);
-  --text-title--line-height: 1.22;
-  --text-title--letter-spacing: -0.02em;
+  --text-hero: clamp(2.9rem, 1.1rem + 7.2vw, 6.85rem);
+  --text-hero--line-height: 0.98;
+  --text-hero--letter-spacing: -0.025em;
+  --text-display: clamp(2.1rem, 1.05rem + 3.9vw, 3.7rem);
+  --text-display--line-height: 1.12;
+  --text-display--letter-spacing: -0.018em;
+  --text-title: clamp(1.4rem, 1.05rem + 1.45vw, 2.05rem);
+  --text-title--line-height: 1.25;
+  --text-title--letter-spacing: -0.012em;
   --text-lead: clamp(1.0625rem, 0.98rem + 0.45vw, 1.3125rem);
-  --text-lead--line-height: 1.65;
+  --text-lead--line-height: 1.68;
 
   /* 8px spacing scale extensions */
   --spacing-section: clamp(4.5rem, 3rem + 6vw, 9rem);
@@ -127,7 +127,7 @@
     line-height: 1.65;
     letter-spacing: -0.011em;
     font-optical-sizing: auto;
-    font-feature-settings: "ss01" on, "cv11" on;
+    font-feature-settings: "ss01" on, "ss02" on;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
@@ -137,7 +137,7 @@
   h3,
   .font-display {
     font-optical-sizing: auto;
-    font-feature-settings: "ss01" on;
+    font-feature-settings: "SOFT" 50, "WONK" 0;
   }
 
   :focus-visible {

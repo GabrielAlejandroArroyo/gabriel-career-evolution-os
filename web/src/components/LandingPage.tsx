@@ -5,6 +5,8 @@ import { Differentiation } from "@/components/sections/Differentiation";
 import { Hero } from "@/components/sections/Hero";
 import { Industries } from "@/components/sections/Industries";
 import { Metrics } from "@/components/sections/Metrics";
+import { Presence } from "@/components/sections/Presence";
+import { Projects } from "@/components/sections/Projects";
 import { SkillMatrix } from "@/components/sections/SkillMatrix";
 import { TechStack } from "@/components/sections/TechStack";
 import { Trajectory } from "@/components/sections/Trajectory";
@@ -23,7 +25,9 @@ export function LandingPage({ locale }: { locale: Locale }) {
       <TechStack dict={dict} />
       <Trajectory dict={dict} />
       <Industries dict={dict} />
+      <Projects dict={dict} />
       <Credentials dict={dict} />
+      <Presence dict={dict} />
       <Contact dict={dict} />
     </>
   );

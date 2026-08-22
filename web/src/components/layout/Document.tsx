@@ -38,6 +38,8 @@ export function Document({
       "Legacy Modernization",
       "Banking Systems",
       "COBIS",
+      "OpenText Documentum",
+      "Bizagi",
       "AWS",
       "Generative AI",
     ],

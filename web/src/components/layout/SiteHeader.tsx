@@ -7,8 +7,8 @@ import { ThemeToggle } from "./ThemeToggle";
 export function SiteHeader({ dict }: { dict: Dictionary }) {
   const navItems = [
     { href: "#expertise", label: dict.nav.expertise },
-    { href: "#experience", label: dict.nav.experience },
-    { href: "#credentials", label: dict.nav.credentials },
+    { href: "#portfolio", label: dict.nav.portfolio },
+    { href: "#presence", label: dict.nav.presence },
     { href: "#contact", label: dict.nav.contact },
   ];
 
