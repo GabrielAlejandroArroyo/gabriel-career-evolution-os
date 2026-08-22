@@ -360,6 +360,7 @@ export const es: Dictionary = {
   },
 
   footer: {
+    clientsLabel: "Empresas y clientes con los que trabajé",
     tagline: "Software & Solution Architect",
     builtWith: "Next.js y TypeScript. Desplegado en GitHub Pages.",
   },

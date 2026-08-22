@@ -359,6 +359,7 @@ export const en: Dictionary = {
   },
 
   footer: {
+    clientsLabel: "Companies and clients I've worked with",
     tagline: "Software & Solution Architect",
     builtWith: "Next.js and TypeScript. Deployed on GitHub Pages.",
   },

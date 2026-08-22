@@ -230,6 +230,52 @@
   }
 }
 
+@keyframes logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes logo-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+:root {
+  --logo-dock-height: 3.75rem;
+}
+
+.logo-marquee {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 5%,
+    #000 95%,
+    transparent
+  );
+}
+
+.logo-marquee-track {
+  animation: logo-marquee 55s linear infinite;
+  will-change: transform;
+}
+
+.logo-marquee:hover .logo-marquee-track {
+  animation-play-state: paused;
+}
+
+.logo-float {
+  animation: logo-float 3.2s ease-in-out infinite;
+}
+
 .enter {
   animation: fade-rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -267,7 +313,9 @@
 
   .enter,
   .rule-grow,
-  .blueprint-grid {
+  .blueprint-grid,
+  .logo-marquee-track,
+  .logo-float {
     animation: none !important;
   }
 

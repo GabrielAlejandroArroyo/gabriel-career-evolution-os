@@ -5,11 +5,10 @@
  * read identically in Spanish and English. Every translatable string lives in
  * `src/i18n`.
  *
- * TODO(gabriel): reemplazar `contact.email` por el real antes de publicar.
  */
 
 export const contact = {
-  email: "gabriel.arroyo@example.com",
+  email: "gabriel.arroyo@gmail.com",
   linkedin: "https://www.linkedin.com/in/gabriel-arroyo-a7b289a",
   github: "https://github.com/GabrielAlejandroArroyo",
 } as const;

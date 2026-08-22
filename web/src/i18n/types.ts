@@ -175,6 +175,7 @@ export type Dictionary = {
   };
 
   footer: {
+    clientsLabel: string;
     tagline: string;
     builtWith: string;
   };
