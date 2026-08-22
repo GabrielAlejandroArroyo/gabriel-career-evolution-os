@@ -414,7 +414,7 @@ Principio: **Professional Profile es la fuente**; LinkedIn/CV/Jobs son proyeccio
 
 - [x] Análisis y docs oficiales  
 - [x] ADRs  
-- [ ] Init git + estructura docs (este entregable)  
+- [x] Init git + estructura docs (este entregable)  
 - [ ] (Opcional) scaffold Next.js mínimo solo para validar stack — **diferido a inicio Slice 1**
 
 ### Etapa 1 — Slice 1
