@@ -111,6 +111,93 @@ export const en: Dictionary = {
       "Skills, stack, path, industries and education. Collapsed by default to keep the scroll short.",
     expand: "Show experience",
     collapse: "Hide experience",
+    viaLabel: "Delivered through",
+    companies: {
+      accusys: {
+        role: "Development, analysis, design · Tech lead · Generative AI",
+        period: "June 2023 — Present",
+        summary:
+          "At Accusys I combine COBIS Pasivas banking work, tech lead on a fullstack COCOMO app (.NET 8 + Angular + Docker), and design of a corporate knowledge platform on AWS Bedrock for banking teams.",
+      },
+      "banco-ciudad": {
+        role: "Development, analysis & design — COBIS Pasivas",
+        period: "June 2023 — Present",
+        summary:
+          "Accusys client. End-to-end analysis, design and development on the COBIS core (Pasivas), using C#, MVC, .NET, Java, VB6, SQL/T-SQL, SH and SQR as needed.",
+      },
+      "banco-macro": {
+        role: "Development, analysis & design — COBIS Pasivas",
+        period: "June 2023 — Present",
+        summary:
+          "Accusys client. Functional/technical delivery on COBIS Pasivas for Macro, spanning backend and frontend in the bank’s stack (C#/.NET, Java, SQL).",
+      },
+      "banco-patagonia": {
+        role: "Development, analysis & design — COBIS Pasivas",
+        period: "June 2023 — Present",
+        summary:
+          "Accusys client. Analysis, design and development on COBIS Pasivas for Patagonia, aligned to the bank’s processes and stack.",
+      },
+      facebank: {
+        role: "Development, analysis & design — COBIS Pasivas",
+        period: "June 2023 — Present",
+        summary:
+          "Accusys client. Requirements delivery on the COBIS banking core (Pasivas) for Facebank through the same analysis–design–build cycle.",
+      },
+      ypf: {
+        role: "Documentum development · Frontend/Backend · Functional analyst",
+        period: "2003 / 2008 — May 2023",
+        summary:
+          "Inetum/IECISA client. Long-running Documentum work at YPF: Content Server, WDK, Webtop, workflows, 7.0→21.2 migrations, Docker/Postgres labs, Java/C#/React/Angular/Node apps and Invesdoc/Invesflow across countries.",
+      },
+      inetum: {
+        role: "Development, analysis, design, install · Bizagi consulting",
+        period: "January 2021 — May 2023 (ex IECISA)",
+        summary:
+          "At Inetum (formerly Informática El Corte Inglés) I delivered Documentum/BPM for enterprise clients, Bizagi commercial demos and document/process solutions across the region.",
+      },
+      techint: {
+        role: "Evolutionary Documentum / Webtop development",
+        period: "January 2018 — January 2021",
+        summary:
+          "IECISA client. Evolutionary development on Documentum 6.7/Webtop: new features and incident fixes in Java and C#.",
+      },
+      "la-anonima": {
+        role: "Development, analysis & design — transport portal",
+        period: "September 2020 — May 2023",
+        summary:
+          "Inetum client. La Anónima transport portal: Angular 10 + Java Spring / Oracle with Spring Tool Suite, JPA Hibernate and Java 8.",
+      },
+      claro: {
+        role: "Functional analyst / developer — number portability",
+        period: "March 2011 — December 2011",
+        summary:
+          "IECISA client. Analysis, design and development (Java / PL-SQL) on PORTANODE Integrator/Gateway for number portability in Argentina and Paraguay.",
+      },
+      mapfre: {
+        role: "Service-layer design & coding — SGA MAPFRE",
+        period: "August 2016 — August 2017",
+        summary:
+          "IECISA client (Colombia). REST/SOAP service layer for SGA-MAPFRE using Documentum and xCP 2.2 services, in Java and C#.",
+      },
+      coto: {
+        role: "Support, rollout & retail (STORE FLOW / RETAIL WARE)",
+        period: "1998 — 2003",
+        summary:
+          "IECISA client. Technical support coordination and retail rollouts: Coto (~1500 users) plus Tía, Eki and others, including migrations and test plans.",
+      },
+      banbif: {
+        role: "Documentum consulting · REST / Webtop development",
+        period: "February 2018 — August 2018",
+        summary:
+          "IECISA client (Peru). BanBif improvement consulting, xCP 2.3 install, REST services in C# and Webtop in Java on Microsoft SQL Server.",
+      },
+      nike: {
+        role: "Functional analyst / developer — RETAIL WARE",
+        period: "January 2004 — October 2008",
+        summary:
+          "IECISA client. Analysis, design and development of RETAIL WARE (VB6, C#, Clarion, SQL) for Nike Argentina, Mexico and Chile, plus Puma, Dabra and Torca.",
+      },
+    },
   },
 
   skills: {

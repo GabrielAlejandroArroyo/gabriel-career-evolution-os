@@ -111,6 +111,93 @@ export const es: Dictionary = {
       "Skills, stack, trayectoria, industrias y formación. Cerrado por defecto para no alargar el scroll.",
     expand: "Ver experiencia",
     collapse: "Ocultar experiencia",
+    viaLabel: "Prestando servicios desde",
+    companies: {
+      accusys: {
+        role: "Desarrollo, analista, diseño · Líder técnico · IA generativa",
+        period: "Junio 2023 — Actual",
+        summary:
+          "En Accusys combino backend/frontend sobre COBIS (módulo Pasivas) para banca, liderazgo técnico de una app fullstack COCOMO (.NET 8 + Angular + Docker) y el diseño de una plataforma de conocimiento corporativo con AWS Bedrock para el área bancaria.",
+      },
+      "banco-ciudad": {
+        role: "Desarrollo, análisis y diseño — COBIS Pasivas",
+        period: "Junio 2023 — Actual",
+        summary:
+          "Cliente Accusys. Ante cada requerimiento: análisis, diseño y desarrollo en el core bancario COBIS (módulo Pasivas), con C#, MVC, .NET, Java, VB6, SQL/T-SQL, scripts SH y SQR según el contexto del banco.",
+      },
+      "banco-macro": {
+        role: "Desarrollo, análisis y diseño — COBIS Pasivas",
+        period: "Junio 2023 — Actual",
+        summary:
+          "Cliente Accusys. Implementación de cambios en Pasivas del core COBIS: análisis funcional/técnico y desarrollo backend/frontend adaptado al stack del banco (C#/.NET, Java, SQL).",
+      },
+      "banco-patagonia": {
+        role: "Desarrollo, análisis y diseño — COBIS Pasivas",
+        period: "Junio 2023 — Actual",
+        summary:
+          "Cliente Accusys. Análisis, diseño y desarrollo sobre COBIS Pasivas para Patagonia, alineando el entregable al stack y a los procesos del banco.",
+      },
+      facebank: {
+        role: "Desarrollo, análisis y diseño — COBIS Pasivas",
+        period: "Junio 2023 — Actual",
+        summary:
+          "Cliente Accusys. Desarrollo e integración de requerimientos en el core bancario COBIS (Pasivas) para Facebank, con el mismo ciclo de análisis–diseño–desarrollo.",
+      },
+      ypf: {
+        role: "Desarrollo Documentum · Frontend/Backend · Analista funcional",
+        period: "2003 / 2008 — Mayo 2023",
+        summary:
+          "Cliente Inetum/IECISA. Años de trabajo en gestión documental YPF: Documentum (Content Server, WDK, Webtop, workflows), migraciones 7.0→21.2, laboratorio Docker/Postgres, apps Java/C#/React/Angular/Node y sistemas Invesdoc/Invesflow en múltiples países.",
+      },
+      inetum: {
+        role: "Desarrollo, análisis, diseño, instalación · Consultoría Bizagi",
+        period: "Enero 2021 — Mayo 2023 (ex IECISA)",
+        summary:
+          "En Inetum (ex Informática El Corte Inglés) lideré entregas Documentum/BPM para clientes enterprise, demos comerciales Bizagi e integración de soluciones documentales y de procesos en la región.",
+      },
+      techint: {
+        role: "Desarrollo evolutivo Documentum / Webtop",
+        period: "Enero 2018 — Enero 2021",
+        summary:
+          "Cliente IECISA. Desarrollo evolutivo Documentum 6.7/Webtop: nuevas funcionalidades y corrección de incidencias en Java y C#.",
+      },
+      "la-anonima": {
+        role: "Desarrollo, análisis y diseño — portal de transportes",
+        period: "Septiembre 2020 — Mayo 2023",
+        summary:
+          "Cliente Inetum. Portal de transportes La Anónima: Angular 10 + Java Spring / Oracle, con Spring Tool Suite, JPA Hibernate y Java 8.",
+      },
+      claro: {
+        role: "Analista funcional / programador — portabilidad numérica",
+        period: "Marzo 2011 — Diciembre 2011",
+        summary:
+          "Cliente IECISA. Análisis, diseño y desarrollo (Java / PL-SQL) sobre PORTANODE Integrator/Gateway para portabilidad numérica en Argentina y Paraguay.",
+      },
+      mapfre: {
+        role: "Diseño y programación de capa de servicios — SGA MAPFRE",
+        period: "Agosto 2016 — Agosto 2017",
+        summary:
+          "Cliente IECISA (Colombia). Capa REST/SOAP del proyecto SGA-MAPFRE con Documentum y servicios xCP 2.2, en Java y C#.",
+      },
+      coto: {
+        role: "Soporte, implementación y retail (STORE FLOW / RETAIL WARE)",
+        period: "1998 — 2003",
+        summary:
+          "Cliente IECISA. Coordinación de soporte técnico e implementación retail: Coto (~1500 usuarios) junto a Tía, Eki y otros, con migración de sistemas y planes de prueba.",
+      },
+      banbif: {
+        role: "Consultoría Documentum · desarrollo REST / Webtop",
+        period: "Febrero 2018 — Agosto 2018",
+        summary:
+          "Cliente IECISA (Perú). Consultoría de mejoras en BanBif, instalación xCP 2.3, servicios REST en C# y Webtop en Java sobre Microsoft SQL Server.",
+      },
+      nike: {
+        role: "Analista funcional / programador — RETAIL WARE",
+        period: "Enero 2004 — Octubre 2008",
+        summary:
+          "Cliente IECISA. Análisis, diseño y desarrollo del sistema retail RETAIL WARE (VB6, C#, Clarion, SQL) para Nike Argentina, México y Chile, además de Puma, Dabra y Torca.",
+      },
+    },
   },
 
   skills: {

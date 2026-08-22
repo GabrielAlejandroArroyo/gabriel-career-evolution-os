@@ -1,3 +1,4 @@
+import type { CompanyId } from "@/data/companies";
 import type {
   CapabilityId,
   CredentialId,
@@ -90,6 +91,15 @@ export type Dictionary = {
     intro: string;
     expand: string;
     collapse: string;
+    viaLabel: string;
+    companies: Record<
+      CompanyId,
+      {
+        role: string;
+        period: string;
+        summary: string;
+      }
+    >;
   };
 
   skills: {

@@ -1,13 +1,12 @@
 import { companies } from "@/data/companies";
-import { CompanyWordmark } from "./CompanyWordmark";
+import { CompanyMark } from "./CompanyMark";
 
 type ClientMarqueeProps = {
   label: string;
 };
 
 /**
- * Fixed bottom dock: logos stay visible while scrolling after deploy.
- * Track is duplicated for a seamless CSS marquee loop.
+ * Fixed bottom dock: logos only, each linked to `#experience-{id}`.
  */
 export function ClientMarquee({ label }: ClientMarqueeProps) {
   const track = [...companies, ...companies];
@@ -21,7 +20,7 @@ export function ClientMarquee({ label }: ClientMarqueeProps) {
       <p className="sr-only">{label}</p>
 
       <div className="logo-marquee relative overflow-hidden">
-        <ul className="logo-marquee-track flex w-max items-center gap-10 px-6 md:gap-14 md:px-10">
+        <ul className="logo-marquee-track flex w-max items-center gap-8 px-6 md:gap-12 md:px-10">
           {track.map((company, index) => (
             <li
               key={`${company.id}-${index}`}
@@ -29,7 +28,10 @@ export function ClientMarquee({ label }: ClientMarqueeProps) {
               aria-hidden={index >= companies.length ? true : undefined}
               style={{ animationDelay: `${(index % companies.length) * 0.12}s` }}
             >
-              <CompanyWordmark company={company} />
+              <CompanyMark
+                company={company}
+                inert={index >= companies.length}
+              />
             </li>
           ))}
         </ul>
