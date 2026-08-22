@@ -47,7 +47,7 @@ export function Contact({ dict }: { dict: Dictionary }) {
 
       <Reveal delay={200}>
         <div className="mt-14 border-t border-fg-invert/15 pt-8">
-          <p className="eyebrow text-fg-invert/45">{copy.rolesLabel}</p>
+          <p className="eyebrow text-fg-invert/60">{copy.rolesLabel}</p>
           <ul className="mt-4 flex flex-wrap gap-2">
             {copy.roles.map((role) => (
               <li

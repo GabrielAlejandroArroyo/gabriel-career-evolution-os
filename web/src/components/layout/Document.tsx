@@ -56,10 +56,7 @@ export function Document({
         <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
       </noscript>
       <body className="flex min-h-screen flex-col">
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-100 focus:rounded-full focus:bg-accent focus:px-5 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-accent-fg"
-        >
+        <a href="#main" className="skip-link">
           {dict.nav.skipToContent}
         </a>
         <SiteHeader dict={dict} />

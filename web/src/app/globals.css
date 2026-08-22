@@ -15,7 +15,8 @@
 
   --fg: #16171a;
   --fg-muted: #55565c;
-  --fg-subtle: #7c7d84;
+  /* Kept at 4.98:1 against --bg so the small eyebrow labels clear AA. */
+  --fg-subtle: #6b6c73;
   --fg-invert: #f7f7f6;
 
   --border: #e2e1dd;
@@ -26,7 +27,7 @@
   --accent-fg: #ffffff;
   --accent-subtle: #e2f1f0;
 
-  --highlight: #b4501f;
+  --highlight: #a84a1c;
   --highlight-soft: #d98a5c;
 
   --ring: #0d6d6d;
@@ -42,7 +43,8 @@
 
   --fg: #f2f3f4;
   --fg-muted: #a2a5ad;
-  --fg-subtle: #7d818a;
+  /* Light enough to clear AA on --bg-inset, the darkest surface it sits on. */
+  --fg-subtle: #868a93;
   --fg-invert: #0c0d10;
 
   --border: #262930;
@@ -122,7 +124,6 @@
   :focus-visible {
     outline: 2px solid var(--ring);
     outline-offset: 3px;
-    border-radius: 2px;
   }
 
   ::selection {
@@ -137,6 +138,33 @@
 
 @utility font-mono {
   font-family: var(--font-plex), ui-monospace, monospace;
+}
+
+/**
+ * Written as plain CSS rather than `sr-only` plus `focus:not-sr-only`
+ * utilities, because the unprefixed `sr-only` clip kept winning and the link
+ * never appeared on focus. Staying out of view via transform keeps it
+ * announced by screen readers and reachable by keyboard at all times.
+ */
+@layer components {
+  .skip-link {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 100;
+    transform: translateY(-250%);
+    border-radius: 9999px;
+    background-color: var(--accent);
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--accent-fg);
+    transition: transform 0.2s ease-out;
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
 }
 
 /* Eyebrow label used above every section heading. */
