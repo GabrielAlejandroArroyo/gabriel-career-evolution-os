@@ -253,33 +253,37 @@
   --logo-dock-height: 4.25rem;
 }
 
-/* Contrasting tiles so brand marks stay readable in both themes. */
+/* Tiles follow the page theme. Dark marks invert to white in .dark. */
 .logo-plate {
-  background: #ffffff;
+  background: var(--bg-elevated);
   box-shadow:
     0 0 0 1px var(--border-strong),
     0 4px 12px rgba(22, 23, 26, 0.08);
 }
 
 .dark .logo-plate {
-  background: #ffffff;
+  background: var(--bg-elevated);
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.16),
-    0 6px 16px rgba(0, 0, 0, 0.45);
+    0 0 0 1px var(--border),
+    0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
-.logo-plate-dark {
+.logo-plate-baked {
   background: #111318;
   box-shadow:
     0 0 0 1px var(--border-strong),
     0 4px 12px rgba(22, 23, 26, 0.12);
 }
 
-.dark .logo-plate-dark {
-  background: #0a0b0e;
+.dark .logo-plate-baked {
+  background: var(--bg-inset);
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.18),
-    0 6px 16px rgba(0, 0, 0, 0.5);
+    0 0 0 1px var(--border),
+    0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.dark .logo-adapt-invert {
+  filter: brightness(0) invert(1);
 }
 
 .logo-marquee {
