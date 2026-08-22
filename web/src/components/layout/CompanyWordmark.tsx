@@ -2,7 +2,7 @@ import type { CompanyLogo } from "@/data/companies";
 import { CompanyMark } from "./CompanyMark";
 
 /**
- * Logo mark + name. Marks are stylized brand tiles (not official trademark files).
+ * Original logo + company name tinted with the brand accent color.
  */
 export function CompanyWordmark({ company }: { company: CompanyLogo }) {
   return (
