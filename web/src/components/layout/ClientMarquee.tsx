@@ -13,7 +13,7 @@ export function ClientMarquee({ label }: ClientMarqueeProps) {
 
   return (
     <div
-      className="logo-dock fixed inset-x-0 bottom-0 z-40 border-t border-border bg-bg-elevated/95 py-3 shadow-[0_-8px_32px_rgba(0,0,0,0.08)] backdrop-blur-md dark:shadow-[0_-8px_32px_rgba(0,0,0,0.35)] md:py-3.5"
+      className="logo-dock fixed inset-x-0 bottom-0 z-40 border-t border-border bg-bg-inset/95 py-3 shadow-[0_-8px_32px_rgba(0,0,0,0.08)] backdrop-blur-md dark:shadow-[0_-8px_32px_rgba(0,0,0,0.35)] md:py-3.5"
       role="complementary"
       aria-label={label}
     >
@@ -24,7 +24,7 @@ export function ClientMarquee({ label }: ClientMarqueeProps) {
           {track.map((company, index) => (
             <li
               key={`${company.id}-${index}`}
-              className="logo-float shrink-0 opacity-90 transition-opacity hover:opacity-100"
+              className="logo-float shrink-0"
               aria-hidden={index >= companies.length ? true : undefined}
               style={{ animationDelay: `${(index % companies.length) * 0.12}s` }}
             >

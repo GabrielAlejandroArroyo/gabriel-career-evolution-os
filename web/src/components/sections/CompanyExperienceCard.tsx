@@ -18,11 +18,7 @@ export function CompanyExperienceCard({ company, dict }: CompanyExperienceCardPr
     <article className="rounded-xl border border-border bg-bg-inset px-5 py-5 md:px-6 md:py-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-6">
         <span
-          className={
-            isDark
-              ? "inline-flex h-14 w-40 shrink-0 items-center justify-center rounded-lg bg-neutral-950 px-3 py-2 ring-1 ring-white/10"
-              : "inline-flex h-14 w-40 shrink-0 items-center justify-center rounded-lg bg-white px-3 py-2 ring-1 ring-black/8"
-          }
+          className={`${isDark ? "logo-plate-dark" : "logo-plate"} inline-flex h-14 w-40 shrink-0 items-center justify-center rounded-lg px-3 py-2`}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img

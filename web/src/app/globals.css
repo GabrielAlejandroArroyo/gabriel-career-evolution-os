@@ -250,7 +250,36 @@
 }
 
 :root {
-  --logo-dock-height: 3.75rem;
+  --logo-dock-height: 4.25rem;
+}
+
+/* Contrasting tiles so brand marks stay readable in both themes. */
+.logo-plate {
+  background: #ffffff;
+  box-shadow:
+    0 0 0 1px var(--border-strong),
+    0 4px 12px rgba(22, 23, 26, 0.08);
+}
+
+.dark .logo-plate {
+  background: #ffffff;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.16),
+    0 6px 16px rgba(0, 0, 0, 0.45);
+}
+
+.logo-plate-dark {
+  background: #111318;
+  box-shadow:
+    0 0 0 1px var(--border-strong),
+    0 4px 12px rgba(22, 23, 26, 0.12);
+}
+
+.dark .logo-plate-dark {
+  background: #0a0b0e;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 6px 16px rgba(0, 0, 0, 0.5);
 }
 
 .logo-marquee {
