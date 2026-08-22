@@ -34,7 +34,7 @@ export function SectionHeading({
   return (
     <Reveal>
       <p className={`eyebrow ${eyebrowTone}`}>{eyebrow}</p>
-      <h2 className="mt-4 max-w-3xl text-balance font-display text-display font-bold tracking-[-0.02em]">
+      <h2 className="mt-4 max-w-3xl text-balance font-display text-display font-bold tracking-[var(--text-display--letter-spacing)]">
         {heading}
       </h2>
       {intro ? (

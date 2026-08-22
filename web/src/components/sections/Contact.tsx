@@ -10,7 +10,7 @@ export function Contact({ dict }: { dict: Dictionary }) {
     <Section id="contact" className="border-t border-border bg-bg-invert text-fg-invert">
       <Reveal>
         <p className="eyebrow text-highlight-soft">{copy.eyebrow}</p>
-        <h2 className="mt-4 max-w-3xl font-display text-display font-bold tracking-[-0.02em] text-balance">
+        <h2 className="mt-4 max-w-3xl font-display text-display font-bold tracking-[var(--text-display--letter-spacing)] text-balance">
           {copy.heading}
         </h2>
         <p className="mt-6 max-w-xl text-lead text-fg-invert/70 text-pretty">

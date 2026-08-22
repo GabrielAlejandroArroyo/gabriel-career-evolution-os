@@ -1,28 +1,35 @@
-import { Figtree, IBM_Plex_Mono, Syne } from "next/font/google";
+import {
+  Bricolage_Grotesque,
+  JetBrains_Mono,
+  Plus_Jakarta_Sans,
+} from "next/font/google";
 
 /**
- * Fonts are declared once and shared by both root layouts. next/font
- * self-hosts them at build time, so no request leaves the visitor's browser.
+ * Current premium pairing for an architecture-facing profile:
+ * - Bricolage Grotesque: display with optical size, architectural character
+ * - Plus Jakarta Sans: soft geometric body that reads well at length
+ * - JetBrains Mono: crisp technical labels without looking dated
+ *
+ * Self-hosted by next/font at build time; no request leaves the visitor's browser.
  */
-export const syne = Syne({
-  variable: "--font-syne",
+export const display = Bricolage_Grotesque({
+  variable: "--font-display-face",
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
   display: "swap",
 });
 
-export const figtree = Figtree({
-  variable: "--font-figtree",
+export const sans = Plus_Jakarta_Sans({
+  variable: "--font-sans-face",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-export const plexMono = IBM_Plex_Mono({
-  variable: "--font-plex",
+export const mono = JetBrains_Mono({
+  variable: "--font-mono-face",
   subsets: ["latin"],
   weight: ["400", "500"],
   display: "swap",
 });
 
-export const fontVariables = `${syne.variable} ${figtree.variable} ${plexMono.variable}`;
+export const fontVariables = `${display.variable} ${sans.variable} ${mono.variable}`;

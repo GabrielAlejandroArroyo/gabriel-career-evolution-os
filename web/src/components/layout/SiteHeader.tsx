@@ -17,7 +17,7 @@ export function SiteHeader({ dict }: { dict: Dictionary }) {
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-6 py-3.5 md:px-10">
         <Link
           href="/"
-          className="font-display text-sm font-bold tracking-[0.14em] uppercase"
+          className="font-display text-[0.8125rem] font-bold tracking-[0.12em] uppercase"
         >
           {identity.shortName}
         </Link>

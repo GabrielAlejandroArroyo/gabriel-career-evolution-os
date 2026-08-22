@@ -24,13 +24,13 @@ export function Hero({ dict }: { dict: Dictionary }) {
             </span>
           </p>
 
-          <h1 className="enter mt-7 font-display text-hero font-extrabold tracking-[-0.035em] text-balance">
+          <h1 className="enter mt-7 font-display text-hero font-extrabold tracking-[var(--text-hero--letter-spacing)] text-balance">
             {identity.shortName}
           </h1>
 
           <div className="rule-grow mt-6 h-0.5 w-28 bg-highlight" />
 
-          <p className="enter mt-6 font-display text-title font-semibold text-fg">
+          <p className="enter mt-6 font-display text-title font-semibold tracking-[var(--text-title--letter-spacing)] text-fg">
             {dict.hero.role}
           </p>
 

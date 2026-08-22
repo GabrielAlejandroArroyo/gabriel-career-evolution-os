@@ -9,7 +9,7 @@ export function Differentiation({ dict }: { dict: Dictionary }) {
     <Section>
       <Reveal>
         <p className="eyebrow text-accent">{differentiation.eyebrow}</p>
-        <h2 className="mt-4 max-w-4xl font-display text-display font-bold tracking-[-0.02em] text-balance">
+        <h2 className="mt-4 max-w-4xl font-display text-display font-bold tracking-[var(--text-display--letter-spacing)] text-balance">
           {differentiation.headlineLead}{" "}
           <span className="text-accent">{differentiation.headlineEmphasis}</span>
         </h2>
