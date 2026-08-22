@@ -26,12 +26,12 @@ export const es: Dictionary = {
   },
 
   hero: {
-    availability: "Abierto a roles de arquitectura",
+    availability: "Disponible para roles de arquitectura",
     role: "Software & Solution Architect",
     tagline:
-      "Más de 20 años diseñando, construyendo e integrando los sistemas que las empresas no pueden permitirse que fallen. Hoy llevo esa base hacia arquitectura moderna, cloud e IA generativa.",
-    primaryCta: "Hablemos del rol",
-    secondaryCta: "Ver mi expertise",
+      "+20 años en sistemas enterprise y transaccionales: banca, integración, modernización legacy, cloud e IA generativa. Experiencia end-to-end, del diseño a producción.",
+    primaryCta: "Contactar",
+    secondaryCta: "Ver expertise",
   },
 
   metrics: {
@@ -43,18 +43,18 @@ export const es: Dictionary = {
 
   differentiation: {
     eyebrow: "Propuesta de valor",
-    headlineLead: "No soy un developer que acumuló tecnologías.",
-    headlineEmphasis: "Soy un arquitecto que las puso en producción.",
-    body: "La mayoría de los arquitectos llega desde el diseño y nunca sostuvo lo que diseñó. Yo recorrí el camino completo: escribí el código, integré los sistemas, resolví las caídas de madrugada y modernicé lo que otros preferían no tocar. Esa cicatriz operativa es lo que hace que mis decisiones de arquitectura resistan el contacto con la realidad.",
+    headlineLead: "Arquitecto con base hands-on:",
+    headlineEmphasis: "del código en producción a la decisión de arquitectura.",
+    body: "Recorrí el ciclo completo: desarrollo, integración, soporte productivo y modernización de sistemas críticos. Esa experiencia operativa respalda decisiones de arquitectura viables, auditables y sostenibles en producción.",
     formula: ["Enterprise", "Arquitectura", "Banking", "Cloud", "IA generativa"],
     result: "Diferenciación",
   },
 
   capabilities: {
-    eyebrow: "Qué resuelvo",
-    heading: "Los problemas que me traen a la mesa",
+    eyebrow: "Especialización",
+    heading: "Áreas de expertise",
     intro:
-      "Resumen de lo que resuelvo. Expandí cualquiera para ver problema, enfoque y resultado.",
+      "Cuatro frentes donde aporto valor directo. Cada uno incluye problema, enfoque y resultado.",
     expand: "Ver detalle",
     collapse: "Ocultar",
     challengeLabel: "El problema",
@@ -63,7 +63,7 @@ export const es: Dictionary = {
     items: {
       legacyModernization: {
         title: "Modernización de sistemas legacy",
-        teaser: "Migración por etapas sin apagar lo que hoy factura.",
+        teaser: "Migración por etapas sin interrumpir la operación.",
         challenge:
           "Aplicaciones que sostienen el negocio hace 15 años, sin documentación viva, donde cada cambio asusta y nadie quiere firmar la migración.",
         approach:
@@ -72,7 +72,7 @@ export const es: Dictionary = {
           "Un camino de modernización que el negocio puede aprobar porque nunca depende de un big bang ni de apagar lo que hoy factura.",
       },
       enterpriseIntegration: {
-        title: "Integración entre sistemas que no fueron pensados para hablarse",
+        title: "Integración enterprise",
         teaser: "Contratos explícitos, errores visibles y trazabilidad auditable.",
         challenge:
           "Core bancario, ERP, gestión documental, servicios externos y procesos batch que deben coordinarse sin perder consistencia ni trazabilidad.",
@@ -82,8 +82,8 @@ export const es: Dictionary = {
           "Integraciones que se pueden auditar, reprocesar y explicar cuando el negocio pregunta qué pasó con una transacción puntual.",
       },
       bankingCore: {
-        title: "Arquitectura sobre sistemas bancarios y transaccionales",
-        teaser: "Consistencia e idempotencia donde el error es dinero real.",
+        title: "Core bancario y sistemas transaccionales",
+        teaser: "Consistencia, idempotencia y trazabilidad en entornos regulados.",
         challenge:
           "Plataformas donde una inconsistencia no es un bug: es dinero real, un cierre contable roto y una respuesta al regulador.",
         approach:
@@ -92,8 +92,8 @@ export const es: Dictionary = {
           "Decisiones técnicas que soportan volumen y auditoría, tomadas por alguien que entiende el impacto contable y no solo el diagrama.",
       },
       genAiAdoption: {
-        title: "Adopción de IA generativa en contextos enterprise",
-        teaser: "RAG y agentes con límites de datos, no demos sueltas.",
+        title: "IA generativa enterprise",
+        teaser: "RAG y agentes con gobernanza de datos, listos para producción.",
         challenge:
           "Organizaciones que quieren aprovechar GenAI pero no pueden exponer datos sensibles ni sostener una demo que nunca llega a producción.",
         approach:
@@ -105,10 +105,10 @@ export const es: Dictionary = {
   },
 
   experience: {
-    eyebrow: "Profundidad",
-    heading: "Experiencia técnica bajo demanda",
+    eyebrow: "Trayectoria",
+    heading: "Experiencia profesional",
     intro:
-      "Skills, stack, trayectoria, industrias y formación. Cerrado por defecto para no alargar el scroll.",
+      "Skills, stack tecnológico, trayectoria, industrias y formación.",
     expand: "Ver experiencia",
     collapse: "Ocultar experiencia",
     viaLabel: "Prestando servicios desde",
@@ -201,10 +201,10 @@ export const es: Dictionary = {
   },
 
   skills: {
-    eyebrow: "Profundidad técnica",
-    heading: "Dónde estoy y qué tan profundo llego",
+    eyebrow: "Competencias",
+    heading: "Competencias técnicas",
     intro:
-      "Una lectura honesta de mi nivel por dominio. Lo que domino en profundidad y lo que estoy construyendo, sin inflar ninguna de las dos cosas.",
+      "Nivel real por dominio, sin inflar: lo consolidado y lo que está en desarrollo.",
     levelLabel: "Nivel",
     legend: [
       "1 Básico",
@@ -257,10 +257,10 @@ export const es: Dictionary = {
   },
 
   stack: {
-    eyebrow: "Herramientas",
-    heading: "El stack que uso",
+    eyebrow: "Tecnologías",
+    heading: "Stack tecnológico",
     intro:
-      "Amplitud acumulada en veinte años. Las tecnologías son el medio; la arquitectura y el dominio son el argumento.",
+      "Tecnologías aplicadas en proyectos enterprise durante más de 20 años.",
     groups: {
       backend: "Backend",
       frontend: "Frontend",
@@ -274,9 +274,9 @@ export const es: Dictionary = {
 
   trajectory: {
     eyebrow: "Evolución",
-    heading: "De escribir el código a decidir la arquitectura",
+    heading: "Trayectoria de roles",
     intro:
-      "No borro mi etapa de desarrollador: es exactamente lo que respalda mis decisiones de arquitectura hoy.",
+      "Progresión de developer a arquitecto: la base técnica respalda las decisiones de arquitectura.",
     targetLabel: "Foco actual",
     steps: {
       developer: "Developer",
@@ -291,10 +291,10 @@ export const es: Dictionary = {
   },
 
   industries: {
-    eyebrow: "Contexto",
-    heading: "Industrias donde el sistema no puede fallar",
+    eyebrow: "Industrias",
+    heading: "Experiencia por industria",
     intro:
-      "Contextos regulados, transaccionales y de alta exigencia operativa, con foco particular en banca e integración enterprise.",
+      "Entornos regulados y de misión crítica, con foco en banca e integración enterprise.",
     items: {
       banking: "Banca y sistemas transaccionales",
       financialServices: "Servicios financieros",
@@ -307,9 +307,9 @@ export const es: Dictionary = {
 
   credentials: {
     eyebrow: "Formación",
-    heading: "Títulos, certificaciones y hacia dónde voy",
+    heading: "Formación y certificaciones",
     intro:
-      "Separo de forma explícita lo que ya obtuve de lo que está en curso o planificado. Si dice planificado, es porque todavía no lo rendí.",
+      "Estado explícito de cada credencial: obtenida, en curso o planificada.",
     status: {
       earned: "Obtenido",
       inProgress: "En curso",
@@ -347,10 +347,10 @@ export const es: Dictionary = {
   },
 
   projects: {
-    eyebrow: "Portfolio en GitHub",
-    heading: "Proyectos que podés explorar sin salir de acá",
+    eyebrow: "Portfolio",
+    heading: "Proyectos destacados",
     intro:
-      "Seleccioné repositorios públicos que muestran arquitectura, integración y producto. Abrí cualquiera: el detalle y la demo viven en esta misma página.",
+      "Repositorios públicos de arquitectura, integración y producto, con demos integradas en esta página.",
     openPreview: "Ver en la página",
     closePreview: "Cerrar preview",
     viewDemo: "Demo en vivo",
@@ -401,10 +401,10 @@ export const es: Dictionary = {
   },
 
   presence: {
-    eyebrow: "Presencia profesional",
-    heading: "Mi LinkedIn, integrado acá",
+    eyebrow: "Perfil profesional",
+    heading: "Perfil LinkedIn",
     intro:
-      "Resumen del perfil público. Expandí para about, credenciales y recomendaciones.",
+      "Resumen del perfil público: about, credenciales y recomendaciones.",
     expand: "Ver perfil completo",
     collapse: "Ocultar detalle",
     locationLabel: "Ubicación",
@@ -427,10 +427,9 @@ export const es: Dictionary = {
   },
 
   contact: {
-    eyebrow: "Siguiente paso",
-    heading:
-      "Si buscás un arquitecto que ya vivió la complejidad enterprise, hablemos.",
-    body: "Respondo con contexto concreto sobre tu stack y tu problema, no con un pitch genérico. Contame qué estás tratando de resolver.",
+    eyebrow: "Contacto",
+    heading: "Disponible para roles de arquitectura",
+    body: "Respondo con contexto concreto sobre tu stack y tu desafío técnico. Contame qué necesitás resolver.",
     rolesLabel: "Roles que me interesan",
     roles: [
       "Software Architect",

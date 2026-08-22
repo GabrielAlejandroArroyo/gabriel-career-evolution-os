@@ -26,12 +26,12 @@ export const en: Dictionary = {
   },
 
   hero: {
-    availability: "Open to architecture roles",
+    availability: "Available for architecture roles",
     role: "Software & Solution Architect",
     tagline:
-      "Over 20 years designing, building and integrating the systems companies cannot afford to have fail. Today I bring that foundation into modern architecture, cloud and generative AI.",
-    primaryCta: "Let's talk about the role",
-    secondaryCta: "See my expertise",
+      "20+ years in enterprise and transactional systems: banking, integration, legacy modernization, cloud and generative AI. End-to-end experience, from design to production.",
+    primaryCta: "Contact me",
+    secondaryCta: "View expertise",
   },
 
   metrics: {
@@ -43,18 +43,18 @@ export const en: Dictionary = {
 
   differentiation: {
     eyebrow: "Value proposition",
-    headlineLead: "I am not a developer who collected technologies.",
-    headlineEmphasis: "I am an architect who shipped them.",
-    body: "Most architects arrive from design and never had to keep what they designed alive. I walked the full path: I wrote the code, integrated the systems, handled the 3 a.m. outages and modernized what everyone else preferred not to touch. That operational scar tissue is why my architectural decisions survive contact with reality.",
+    headlineLead: "A hands-on architect:",
+    headlineEmphasis: "from production code to architecture decisions.",
+    body: "I covered the full cycle: development, integration, production support and modernization of mission-critical systems. That operational background produces architecture decisions that are viable, auditable and sustainable in production.",
     formula: ["Enterprise", "Architecture", "Banking", "Cloud", "Generative AI"],
     result: "Differentiation",
   },
 
   capabilities: {
-    eyebrow: "What I solve",
-    heading: "The problems that get me in the room",
+    eyebrow: "Specialization",
+    heading: "Areas of expertise",
     intro:
-      "A short read of what I solve. Expand any item for problem, approach and outcome.",
+      "Four areas where I deliver direct value. Each includes problem, approach and outcome.",
     expand: "Show detail",
     collapse: "Hide",
     challengeLabel: "The problem",
@@ -63,7 +63,7 @@ export const en: Dictionary = {
     items: {
       legacyModernization: {
         title: "Legacy system modernization",
-        teaser: "Staged migration without switching off what generates revenue.",
+        teaser: "Staged migration without disrupting operations.",
         challenge:
           "Applications that have carried the business for 15 years, with no living documentation, where every change is frightening and nobody wants to sign off on the migration.",
         approach:
@@ -72,7 +72,7 @@ export const en: Dictionary = {
           "A modernization path the business can actually approve, because it never depends on a big bang or on switching off what currently generates revenue.",
       },
       enterpriseIntegration: {
-        title: "Integrating systems never designed to talk to each other",
+        title: "Enterprise integration",
         teaser: "Explicit contracts, visible failures and auditable traceability.",
         challenge:
           "Core banking, ERP, document management, external services and batch processes that must stay coordinated without losing consistency or traceability.",
@@ -82,8 +82,8 @@ export const en: Dictionary = {
           "Integrations you can audit, reprocess and explain when the business asks what happened to one specific transaction.",
       },
       bankingCore: {
-        title: "Architecture on banking and transactional systems",
-        teaser: "Consistency and idempotency where an error is real money.",
+        title: "Core banking and transactional systems",
+        teaser: "Consistency, idempotency and traceability in regulated environments.",
         challenge:
           "Platforms where an inconsistency is not a bug: it is real money, a broken accounting close and an answer owed to the regulator.",
         approach:
@@ -92,8 +92,8 @@ export const en: Dictionary = {
           "Technical decisions that hold up under volume and audit, made by someone who understands the accounting impact and not just the diagram.",
       },
       genAiAdoption: {
-        title: "Generative AI adoption in enterprise contexts",
-        teaser: "RAG and agents with data boundaries, not loose demos.",
+        title: "Enterprise generative AI",
+        teaser: "RAG and agents with data governance, production-ready.",
         challenge:
           "Organizations that want to leverage GenAI but cannot expose sensitive data, and cannot sustain a demo that never reaches production.",
         approach:
@@ -105,10 +105,10 @@ export const en: Dictionary = {
   },
 
   experience: {
-    eyebrow: "Depth",
-    heading: "Technical experience on demand",
+    eyebrow: "Experience",
+    heading: "Professional experience",
     intro:
-      "Skills, stack, path, industries and education. Collapsed by default to keep the scroll short.",
+      "Skills, technology stack, career path, industries and education.",
     expand: "Show experience",
     collapse: "Hide experience",
     viaLabel: "Delivered through",
@@ -201,10 +201,10 @@ export const en: Dictionary = {
   },
 
   skills: {
-    eyebrow: "Technical depth",
-    heading: "Where I stand and how deep I go",
+    eyebrow: "Competencies",
+    heading: "Technical skills",
     intro:
-      "An honest read of my level per domain. What I know deeply and what I am still building, without inflating either one.",
+      "Real level per domain, without inflation: consolidated skills and areas in development.",
     levelLabel: "Level",
     legend: [
       "1 Basic",
@@ -257,10 +257,10 @@ export const en: Dictionary = {
   },
 
   stack: {
-    eyebrow: "Tooling",
-    heading: "The stack I work with",
+    eyebrow: "Technologies",
+    heading: "Technology stack",
     intro:
-      "Breadth accumulated over twenty years. Technologies are the means; architecture and domain are the argument.",
+      "Technologies applied in enterprise projects over 20+ years.",
     groups: {
       backend: "Backend",
       frontend: "Frontend",
@@ -274,9 +274,9 @@ export const en: Dictionary = {
 
   trajectory: {
     eyebrow: "Evolution",
-    heading: "From writing the code to deciding the architecture",
+    heading: "Career path",
     intro:
-      "I do not erase my developer years. They are exactly what backs my architectural decisions today.",
+      "Progression from developer to architect: the technical foundation backs the architecture decisions.",
     targetLabel: "Current focus",
     steps: {
       developer: "Developer",
@@ -291,10 +291,10 @@ export const en: Dictionary = {
   },
 
   industries: {
-    eyebrow: "Context",
-    heading: "Industries where the system cannot fail",
+    eyebrow: "Industries",
+    heading: "Industry experience",
     intro:
-      "Regulated, transactional and operationally demanding environments, with particular focus on banking and enterprise integration.",
+      "Regulated, mission-critical environments, with focus on banking and enterprise integration.",
     items: {
       banking: "Banking & transactional systems",
       financialServices: "Financial services",
@@ -307,9 +307,9 @@ export const en: Dictionary = {
 
   credentials: {
     eyebrow: "Education",
-    heading: "Degrees, certifications and where I am heading",
+    heading: "Education and certifications",
     intro:
-      "I explicitly separate what I have already earned from what is in progress or planned. If it says planned, I have not sat the exam yet.",
+      "Explicit status for each credential: earned, in progress or planned.",
     status: {
       earned: "Earned",
       inProgress: "In progress",
@@ -347,10 +347,10 @@ export const en: Dictionary = {
   },
 
   projects: {
-    eyebrow: "GitHub portfolio",
-    heading: "Projects you can explore without leaving this page",
+    eyebrow: "Portfolio",
+    heading: "Featured projects",
     intro:
-      "A curated set of public repositories that show architecture, integration and product work. Open any of them: the detail and the demo live right here.",
+      "Public repositories covering architecture, integration and product work, with demos embedded on this page.",
     openPreview: "View on this page",
     closePreview: "Close preview",
     viewDemo: "Live demo",
@@ -400,10 +400,10 @@ export const en: Dictionary = {
   },
 
   presence: {
-    eyebrow: "Professional presence",
-    heading: "My LinkedIn, embedded here",
+    eyebrow: "Professional profile",
+    heading: "LinkedIn profile",
     intro:
-      "A short public-profile summary. Expand for about, credentials and recommendations.",
+      "Public profile summary: about, credentials and recommendations.",
     expand: "Show full profile",
     collapse: "Hide detail",
     locationLabel: "Location",
@@ -426,10 +426,9 @@ export const en: Dictionary = {
   },
 
   contact: {
-    eyebrow: "Next step",
-    heading:
-      "If you need an architect who has already lived enterprise complexity, let's talk.",
-    body: "I reply with concrete context about your stack and your problem, not a generic pitch. Tell me what you are trying to solve.",
+    eyebrow: "Contact",
+    heading: "Available for architecture roles",
+    body: "I reply with concrete context about your stack and your technical challenge. Tell me what you need to solve.",
     rolesLabel: "Roles I am interested in",
     roles: [
       "Software Architect",
