@@ -10,18 +10,17 @@ import type {
   TrajectoryStepId,
 } from "@/data/profile";
 
-export type Locale = "es" | "en";
+export type Locale = "es" | "en" | "pt";
 
 /**
  * Shared shape for every dictionary. Because the record keys are derived from
  * the union types in `profile.ts`, adding a skill or a section to the data
- * layer breaks the build until both locales are translated.
+ * layer breaks the build until all locales are translated.
  */
 export type Dictionary = {
   locale: Locale;
   htmlLang: string;
   localeName: string;
-  switchTo: { href: string; label: string; hreflang: string };
 
   meta: {
     title: string;

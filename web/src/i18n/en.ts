@@ -4,7 +4,6 @@ export const en: Dictionary = {
   locale: "en",
   htmlLang: "en",
   localeName: "English",
-  switchTo: { href: "/", label: "ES", hreflang: "es" },
 
   meta: {
     title: "Gabriel Arroyo — Software & Solution Architect",
@@ -360,7 +359,7 @@ export const en: Dictionary = {
       careerOs: {
         title: "Gabriel Career Evolution OS",
         summary:
-          "Personal career evolution platform and this bilingual landing.",
+          "Personal career evolution platform and this multilingual landing.",
         detail:
           "Next.js 16, TypeScript and static export to GitHub Pages. Includes a design system, typed i18n and sections built for recruiter conversion toward architecture roles.",
       },
