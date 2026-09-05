@@ -1,0 +1,217 @@
+"use client";
+
+import { useEffect, useId, useRef, useState } from "react";
+import { useLocale } from "@/components/i18n/LocaleProvider";
+import { useFontPack } from "@/components/config/FontPackProvider";
+import { fontPackIds, fontPackMeta } from "@/config/font-packs";
+import { getDictionary, localeMeta, locales } from "@/i18n";
+
+/**
+ * Project configuration panel: locale, theme and typography pack.
+ */
+export function ConfigPanel() {
+  const { dict, locale, setLocale } = useLocale();
+  const { fontPack, setFontPack } = useFontPack();
+  const [isOpen, setIsOpen] = useState(false);
+  const panelId = useId();
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    function onPointerDown(event: MouseEvent) {
+      if (!rootRef.current?.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") setIsOpen(false);
+    }
+
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [isOpen]);
+
+  function setTheme(nextIsDark: boolean) {
+    document.documentElement.classList.toggle("dark", nextIsDark);
+    try {
+      localStorage.setItem("theme", nextIsDark ? "dark" : "light");
+    } catch {
+      /* ignore */
+    }
+  }
+
+  const cfg = dict.config;
+
+  return (
+    <div ref={rootRef} className="relative">
+      <button
+        type="button"
+        aria-expanded={isOpen}
+        aria-controls={panelId}
+        aria-label={cfg.openLabel}
+        title={cfg.openLabel}
+        onClick={() => setIsOpen((open) => !open)}
+        className={
+          isOpen
+            ? "inline-flex size-10 items-center justify-center rounded-full border border-accent bg-accent-subtle text-accent"
+            : "inline-flex size-10 items-center justify-center rounded-full border border-border text-fg-muted transition hover:border-border-strong hover:text-fg"
+        }
+      >
+        <GearIcon />
+      </button>
+
+      {isOpen ? (
+        <div
+          id={panelId}
+          role="dialog"
+          aria-label={cfg.title}
+          className="absolute top-[calc(100%+0.6rem)] right-0 z-50 w-[min(20.5rem,calc(100vw-2rem))] rounded-2xl border border-border bg-bg-elevated p-4 shadow-[0_18px_50px_rgba(12,13,16,0.16)]"
+        >
+          <p className="font-display text-sm font-semibold tracking-tight">{cfg.title}</p>
+          <p className="mt-1 text-xs text-fg-muted">{cfg.subtitle}</p>
+
+          <section className="mt-4">
+            <h3 className="font-mono text-[0.65rem] tracking-wider text-fg-subtle uppercase">
+              {cfg.languageLabel}
+            </h3>
+            <div
+              role="group"
+              aria-label={cfg.languageLabel}
+              className="mt-2 flex flex-wrap gap-1.5"
+            >
+              {locales.map((code) => {
+                const meta = localeMeta[code];
+                const isActive = code === locale;
+                const name = getDictionary(code).localeName;
+
+                return (
+                  <button
+                    key={code}
+                    type="button"
+                    onClick={() => setLocale(code)}
+                    aria-pressed={isActive}
+                    aria-label={name}
+                    title={name}
+                    className={
+                      isActive
+                        ? "inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 text-xs font-semibold text-accent-fg"
+                        : "inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs text-fg-muted transition hover:border-border-strong hover:text-fg"
+                    }
+                  >
+                    <span aria-hidden className="text-sm leading-none">
+                      {meta.flag}
+                    </span>
+                    <span>{meta.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </section>
+
+          <section className="mt-4">
+            <h3 className="font-mono text-[0.65rem] tracking-wider text-fg-subtle uppercase">
+              {cfg.themeLabel}
+            </h3>
+            <div
+              role="group"
+              aria-label={cfg.themeLabel}
+              className="mt-2 grid grid-cols-2 gap-1.5"
+            >
+              <button
+                type="button"
+                onClick={() => setTheme(false)}
+                className="rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-fg transition hover:border-border-strong dark:font-normal dark:text-fg-muted"
+              >
+                {cfg.themeLight}
+              </button>
+              <button
+                type="button"
+                onClick={() => setTheme(true)}
+                className="rounded-full border border-border px-3 py-1.5 text-xs text-fg-muted transition hover:border-border-strong dark:font-semibold dark:text-fg"
+              >
+                {cfg.themeDark}
+              </button>
+            </div>
+          </section>
+
+          <section className="mt-4">
+            <h3 className="font-mono text-[0.65rem] tracking-wider text-fg-subtle uppercase">
+              {cfg.fontLabel}
+            </h3>
+            <div role="radiogroup" aria-label={cfg.fontLabel} className="mt-2 grid gap-1.5">
+              {fontPackIds.map((id) => {
+                const meta = fontPackMeta[id];
+                const copy = cfg.fontPacks[id];
+                const isActive = id === fontPack;
+
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    role="radio"
+                    aria-checked={isActive}
+                    onClick={() => setFontPack(id)}
+                    className={
+                      isActive
+                        ? "flex items-center gap-3 rounded-xl border border-accent bg-accent-subtle px-3 py-2.5 text-left"
+                        : "flex items-center gap-3 rounded-xl border border-border px-3 py-2.5 text-left transition hover:border-border-strong"
+                    }
+                  >
+                    <span
+                      aria-hidden
+                      data-font-pack={id}
+                      className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-bg-inset font-display text-lg font-bold"
+                      style={{
+                        fontFamily:
+                          id === "signal"
+                            ? "var(--font-pack-signal-display), sans-serif"
+                            : id === "atelier"
+                              ? "var(--font-pack-atelier-display), serif"
+                              : "var(--font-pack-ledger-display), serif",
+                      }}
+                    >
+                      {meta.displaySample}
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block text-sm font-semibold text-fg">
+                        {copy.name}
+                      </span>
+                      <span className="mt-0.5 block truncate text-xs text-fg-muted">
+                        {copy.description}
+                      </span>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </section>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function GearIcon() {
+  return (
+    <svg
+      width="17"
+      height="17"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" />
+      <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9c.2.6.7 1.1 1.5 1.1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z" />
+    </svg>
+  );
+}

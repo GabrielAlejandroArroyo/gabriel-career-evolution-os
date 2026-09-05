@@ -4,12 +4,13 @@ import { fontVariables } from "@/app/fonts";
 import { contact, identity } from "@/data/profile";
 import { getDictionary } from "@/i18n";
 import { LocaleProvider } from "@/components/i18n/LocaleProvider";
+import { FontPackProvider } from "@/components/config/FontPackProvider";
 import { AppShell } from "./AppShell";
 
 /**
- * Theme + locale before paint (localStorage / ?lang=) to reduce flash.
+ * Theme + locale + font pack before paint (localStorage / ?lang=) to reduce flash.
  */
-const bootScript = `try{var t=localStorage.getItem('theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme:dark)').matches;if(d)document.documentElement.classList.add('dark');var q=new URLSearchParams(location.search).get('lang');var l=q||localStorage.getItem('locale')||'es';if(l!=='es'&&l!=='en'&&l!=='pt')l='es';document.documentElement.lang=l==='pt'?'pt-BR':l;}catch(e){}`;
+const bootScript = `try{var t=localStorage.getItem('theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme:dark)').matches;if(d)document.documentElement.classList.add('dark');var q=new URLSearchParams(location.search).get('lang');var l=q||localStorage.getItem('locale')||'es';if(l!=='es'&&l!=='en'&&l!=='pt')l='es';document.documentElement.lang=l==='pt'?'pt-BR':l;var f=localStorage.getItem('fontPack')||'signal';if(f!=='signal'&&f!=='atelier'&&f!=='ledger')f='signal';document.documentElement.dataset.fontPack=f;}catch(e){}`;
 
 /** Single-page shell. Locale is client-switched; SEO defaults to Spanish. */
 export function Document({ children }: { children: ReactNode }) {
@@ -40,7 +41,12 @@ export function Document({ children }: { children: ReactNode }) {
   };
 
   return (
-    <html lang="es" className={fontVariables} suppressHydrationWarning>
+    <html
+      lang="es"
+      data-font-pack="signal"
+      className={fontVariables}
+      suppressHydrationWarning
+    >
       <script dangerouslySetInnerHTML={{ __html: bootScript }} />
       <script
         type="application/ld+json"
@@ -51,7 +57,9 @@ export function Document({ children }: { children: ReactNode }) {
       </noscript>
       <body className="flex min-h-screen flex-col">
         <LocaleProvider>
-          <AppShell>{children}</AppShell>
+          <FontPackProvider>
+            <AppShell>{children}</AppShell>
+          </FontPackProvider>
         </LocaleProvider>
       </body>
     </html>

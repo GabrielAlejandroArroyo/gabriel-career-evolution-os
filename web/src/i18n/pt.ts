@@ -24,6 +24,31 @@ export const pt: Dictionary = {
     toggleTheme: "Alternar tema",
   },
 
+  config: {
+    openLabel: "Configuração do projeto",
+    title: "Configuração",
+    subtitle: "Idioma, tema e tipografia desta página.",
+    languageLabel: "Idioma",
+    themeLabel: "Tema",
+    themeLight: "Claro",
+    themeDark: "Escuro",
+    fontLabel: "Tipografia",
+    fontPacks: {
+      signal: {
+        name: "Signal",
+        description: "Geométrica e contemporânea (Syne · Figtree)",
+      },
+      atelier: {
+        name: "Atelier",
+        description: "Serif suave para títulos (Fraunces · Manrope)",
+      },
+      ledger: {
+        name: "Ledger",
+        description: "Editorial / CV (Newsreader · Source Sans)",
+      },
+    },
+  },
+
   hero: {
     availability: "Disponível para papéis de arquitetura",
     role: "Software & Solution Architect",

@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { getDictionary, localeMeta, locales } from "@/i18n";
+import { ConfigPanel } from "@/components/config/ConfigPanel";
 import { identity } from "@/data/profile";
 import { ScrollProgress } from "./ScrollProgress";
-import { ThemeToggle } from "./ThemeToggle";
 
 export function SiteHeader() {
-  const { dict, locale, setLocale } = useLocale();
+  const { dict } = useLocale();
 
   const navItems = [
     { href: "#expertise", label: dict.nav.expertise },
@@ -40,39 +39,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <div
-            role="group"
-            aria-label="Idioma"
-            className="inline-flex h-10 items-center rounded-full border border-border px-1 font-mono text-xs tracking-wider"
-          >
-            {locales.map((code) => {
-              const meta = localeMeta[code];
-              const isActive = code === locale;
-              const name = getDictionary(code).localeName;
-
-              return (
-                <button
-                  key={code}
-                  type="button"
-                  onClick={() => setLocale(code)}
-                  aria-pressed={isActive}
-                  aria-label={name}
-                  title={name}
-                  className={
-                    isActive
-                      ? "inline-flex items-center gap-1 rounded-full bg-accent px-2.5 py-1.5 font-semibold text-accent-fg"
-                      : "inline-flex items-center gap-1 rounded-full px-2.5 py-1.5 text-fg-muted transition hover:text-fg"
-                  }
-                >
-                  <span aria-hidden className="text-sm leading-none">
-                    {meta.flag}
-                  </span>
-                  <span>{meta.label}</span>
-                </button>
-              );
-            })}
-          </div>
-          <ThemeToggle label={dict.nav.toggleTheme} />
+          <ConfigPanel />
         </div>
       </div>
       <ScrollProgress />

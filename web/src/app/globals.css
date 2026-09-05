@@ -90,24 +90,53 @@
   --font-mono: var(--font-mono-face);
 
   /*
-   * Fluid type scale tuned for Fraunces (serif display) + Manrope (body).
-   * Serif display needs milder negative tracking than grotesques.
+   * Fluid type scale shared across font packs. Pack-specific optical
+   * tweaks live under [data-font-pack] below.
    */
   --text-hero: clamp(2.9rem, 1.1rem + 7.2vw, 6.85rem);
   --text-hero--line-height: 0.98;
-  --text-hero--letter-spacing: -0.025em;
+  --text-hero--letter-spacing: -0.03em;
   --text-display: clamp(2.1rem, 1.05rem + 3.9vw, 3.7rem);
   --text-display--line-height: 1.12;
-  --text-display--letter-spacing: -0.018em;
+  --text-display--letter-spacing: -0.022em;
   --text-title: clamp(1.4rem, 1.05rem + 1.45vw, 2.05rem);
   --text-title--line-height: 1.25;
-  --text-title--letter-spacing: -0.012em;
+  --text-title--letter-spacing: -0.015em;
   --text-lead: clamp(1.0625rem, 0.98rem + 0.45vw, 1.3125rem);
   --text-lead--line-height: 1.68;
 
   /* 8px spacing scale extensions */
   --spacing-section: clamp(4.5rem, 3rem + 6vw, 9rem);
   --spacing-section-compact: clamp(2.5rem, 1.75rem + 3vw, 4.5rem);
+}
+
+/*
+ * Font pack wiring. next/font injects --font-pack-* variables on <html>;
+ * the active pack remaps the semantic faces used by body / utilities.
+ */
+:root,
+html[data-font-pack="signal"] {
+  --font-display-face: var(--font-pack-signal-display);
+  --font-sans-face: var(--font-pack-signal-sans);
+  --font-mono-face: var(--font-pack-mono);
+}
+
+html[data-font-pack="atelier"] {
+  --font-display-face: var(--font-pack-atelier-display);
+  --font-sans-face: var(--font-pack-atelier-sans);
+  --font-mono-face: var(--font-pack-mono);
+  --text-hero--letter-spacing: -0.025em;
+  --text-display--letter-spacing: -0.018em;
+  --text-title--letter-spacing: -0.012em;
+}
+
+html[data-font-pack="ledger"] {
+  --font-display-face: var(--font-pack-ledger-display);
+  --font-sans-face: var(--font-pack-ledger-sans);
+  --font-mono-face: var(--font-pack-mono);
+  --text-hero--letter-spacing: -0.02em;
+  --text-display--letter-spacing: -0.014em;
+  --text-title--letter-spacing: -0.01em;
 }
 
 @layer base {
@@ -128,7 +157,6 @@
     line-height: 1.65;
     letter-spacing: -0.011em;
     font-optical-sizing: auto;
-    font-feature-settings: "ss01" on, "ss02" on;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
@@ -138,6 +166,12 @@
   h3,
   .font-display {
     font-optical-sizing: auto;
+  }
+
+  html[data-font-pack="atelier"] h1,
+  html[data-font-pack="atelier"] h2,
+  html[data-font-pack="atelier"] h3,
+  html[data-font-pack="atelier"] .font-display {
     font-feature-settings: "SOFT" 50, "WONK" 0;
   }
 
