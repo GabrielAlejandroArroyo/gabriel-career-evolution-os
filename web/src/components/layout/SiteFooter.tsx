@@ -1,8 +1,12 @@
-import type { Dictionary } from "@/i18n";
+"use client";
+
+import { useLocale } from "@/components/i18n/LocaleProvider";
 import { identity } from "@/data/profile";
 import { ClientMarquee } from "./ClientMarquee";
 
-export function SiteFooter({ dict }: { dict: Dictionary }) {
+export function SiteFooter() {
+  const { dict } = useLocale();
+
   return (
     <>
       <footer className="border-t border-border bg-bg pb-[var(--logo-dock-height)]">

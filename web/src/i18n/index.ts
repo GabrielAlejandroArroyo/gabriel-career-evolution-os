@@ -7,21 +7,39 @@ export const locales: Locale[] = ["es", "en", "pt"];
 
 export const localeMeta: Record<
   Locale,
-  { label: string; href: string; hreflang: string; ogLocale: string }
+  { label: string; flag: string; hreflang: string; ogLocale: string; htmlLang: string }
 > = {
-  es: { label: "ES", href: "/", hreflang: "es", ogLocale: "es_AR" },
-  en: { label: "EN", href: "/en/", hreflang: "en", ogLocale: "en_US" },
-  pt: { label: "PT", href: "/pt/", hreflang: "pt", ogLocale: "pt_BR" },
+  es: {
+    label: "ES",
+    flag: "🇦🇷",
+    hreflang: "es",
+    ogLocale: "es_AR",
+    htmlLang: "es",
+  },
+  en: {
+    label: "EN",
+    flag: "🇺🇸",
+    hreflang: "en",
+    ogLocale: "en_US",
+    htmlLang: "en",
+  },
+  pt: {
+    label: "PT",
+    flag: "🇧🇷",
+    hreflang: "pt",
+    ogLocale: "pt_BR",
+    htmlLang: "pt-BR",
+  },
 };
 
 const dictionaries: Record<Locale, Dictionary> = { es, en, pt };
 
-export function getDictionary(locale: Locale): Dictionary {
-  return dictionaries[locale];
+export function isLocale(value: string | null | undefined): value is Locale {
+  return value === "es" || value === "en" || value === "pt";
 }
 
-export function localeHome(locale: Locale): string {
-  return localeMeta[locale].href;
+export function getDictionary(locale: Locale): Dictionary {
+  return dictionaries[locale];
 }
 
 export type { Dictionary, Locale };

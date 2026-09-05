@@ -1,3 +1,5 @@
+"use client";
+
 import { Capabilities } from "@/components/sections/Capabilities";
 import { Contact } from "@/components/sections/Contact";
 import { ExperiencePanel } from "@/components/sections/ExperiencePanel";
@@ -5,10 +7,10 @@ import { Hero } from "@/components/sections/Hero";
 import { Presence } from "@/components/sections/Presence";
 import { Projects } from "@/components/sections/Projects";
 import { Proof } from "@/components/sections/Proof";
-import { getDictionary, type Locale } from "@/i18n";
+import { useLocale } from "@/components/i18n/LocaleProvider";
 
-export function LandingPage({ locale }: { locale: Locale }) {
-  const dict = getDictionary(locale);
+export function LandingPage() {
+  const { dict } = useLocale();
 
   return (
     <>

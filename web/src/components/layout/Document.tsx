@@ -2,24 +2,18 @@ import type { ReactNode } from "react";
 import "@/app/globals.css";
 import { fontVariables } from "@/app/fonts";
 import { contact, identity } from "@/data/profile";
-import { getDictionary, type Locale } from "@/i18n";
-import { SiteFooter } from "./SiteFooter";
-import { SiteHeader } from "./SiteHeader";
+import { getDictionary } from "@/i18n";
+import { LocaleProvider } from "@/components/i18n/LocaleProvider";
+import { AppShell } from "./AppShell";
 
 /**
- * Runs before first paint so the stored theme is applied without a flash of
- * the wrong palette. Kept inline and dependency-free on purpose.
+ * Theme + locale before paint (localStorage / ?lang=) to reduce flash.
  */
-const themeScript = `try{var t=localStorage.getItem('theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme:dark)').matches;if(d)document.documentElement.classList.add('dark')}catch(e){}`;
+const bootScript = `try{var t=localStorage.getItem('theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme:dark)').matches;if(d)document.documentElement.classList.add('dark');var q=new URLSearchParams(location.search).get('lang');var l=q||localStorage.getItem('locale')||'es';if(l!=='es'&&l!=='en'&&l!=='pt')l='es';document.documentElement.lang=l==='pt'?'pt-BR':l;}catch(e){}`;
 
-export function Document({
-  locale,
-  children,
-}: {
-  locale: Locale;
-  children: ReactNode;
-}) {
-  const dict = getDictionary(locale);
+/** Single-page shell. Locale is client-switched; SEO defaults to Spanish. */
+export function Document({ children }: { children: ReactNode }) {
+  const dict = getDictionary("es");
 
   const personSchema = {
     "@context": "https://schema.org",
@@ -46,26 +40,19 @@ export function Document({
   };
 
   return (
-    <html lang={dict.htmlLang} className={fontVariables} suppressHydrationWarning>
-      <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+    <html lang="es" className={fontVariables} suppressHydrationWarning>
+      <script dangerouslySetInnerHTML={{ __html: bootScript }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
-      {/* Scroll reveals start hidden and are shown by an observer, so without
-          JavaScript the page would render almost empty. */}
       <noscript>
         <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
       </noscript>
       <body className="flex min-h-screen flex-col">
-        <a href="#main" className="skip-link">
-          {dict.nav.skipToContent}
-        </a>
-        <SiteHeader dict={dict} />
-        <main id="main" className="flex-1">
-          {children}
-        </main>
-        <SiteFooter dict={dict} />
+        <LocaleProvider>
+          <AppShell>{children}</AppShell>
+        </LocaleProvider>
       </body>
     </html>
   );
