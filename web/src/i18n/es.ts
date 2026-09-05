@@ -33,20 +33,8 @@ export const es: Dictionary = {
     themeLight: "Claro",
     themeDark: "Oscuro",
     fontLabel: "Tipografía",
-    fontPacks: {
-      signal: {
-        name: "Signal",
-        description: "Geométrica y contemporánea (Syne · Figtree)",
-      },
-      atelier: {
-        name: "Atelier",
-        description: "Serif suave para títulos (Fraunces · Manrope)",
-      },
-      ledger: {
-        name: "Ledger",
-        description: "Editorial / CV (Newsreader · Source Sans)",
-      },
-    },
+    fontSearch: "Buscar fuente…",
+    fontEmpty: "No hay fuentes con ese nombre.",
   },
 
   hero: {

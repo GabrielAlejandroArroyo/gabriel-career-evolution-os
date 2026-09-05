@@ -1,18 +1,22 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { useFontPack } from "@/components/config/FontPackProvider";
-import { fontPackIds, fontPackMeta } from "@/config/font-packs";
+import {
+  ensureCatalogFontStylesheet,
+  usePageFont,
+} from "@/components/config/PageFontProvider";
+import { pageFonts } from "@/config/page-fonts";
 import { getDictionary, localeMeta, locales } from "@/i18n";
 
 /**
- * Project configuration panel: locale, theme and typography pack.
+ * Project configuration panel: locale, theme and page typography.
  */
 export function ConfigPanel() {
   const { dict, locale, setLocale } = useLocale();
-  const { fontPack, setFontPack } = useFontPack();
+  const { pageFontId, setPageFontId } = usePageFont();
   const [isOpen, setIsOpen] = useState(false);
+  const [fontQuery, setFontQuery] = useState("");
   const panelId = useId();
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -36,6 +40,21 @@ export function ConfigPanel() {
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    ensureCatalogFontStylesheet();
+  }, [isOpen]);
+
+  const filteredFonts = useMemo(() => {
+    const q = fontQuery.trim().toLowerCase();
+    if (!q) return pageFonts;
+    return pageFonts.filter(
+      (font) =>
+        font.family.toLowerCase().includes(q) ||
+        font.category.toLowerCase().includes(q),
+    );
+  }, [fontQuery]);
 
   function setTheme(nextIsDark: boolean) {
     document.documentElement.classList.toggle("dark", nextIsDark);
@@ -71,7 +90,7 @@ export function ConfigPanel() {
           id={panelId}
           role="dialog"
           aria-label={cfg.title}
-          className="absolute top-[calc(100%+0.6rem)] right-0 z-50 w-[min(20.5rem,calc(100vw-2rem))] rounded-2xl border border-border bg-bg-elevated p-4 shadow-[0_18px_50px_rgba(12,13,16,0.16)]"
+          className="absolute top-[calc(100%+0.6rem)] right-0 z-50 w-[min(22rem,calc(100vw-2rem))] rounded-2xl border border-border bg-bg-elevated p-4 shadow-[0_18px_50px_rgba(12,13,16,0.16)]"
         >
           <p className="font-display text-sm font-semibold tracking-tight">{cfg.title}</p>
           <p className="mt-1 text-xs text-fg-muted">{cfg.subtitle}</p>
@@ -144,51 +163,62 @@ export function ConfigPanel() {
             <h3 className="font-mono text-[0.65rem] tracking-wider text-fg-subtle uppercase">
               {cfg.fontLabel}
             </h3>
-            <div role="radiogroup" aria-label={cfg.fontLabel} className="mt-2 grid gap-1.5">
-              {fontPackIds.map((id) => {
-                const meta = fontPackMeta[id];
-                const copy = cfg.fontPacks[id];
-                const isActive = id === fontPack;
+            <label className="mt-2 block">
+              <span className="sr-only">{cfg.fontSearch}</span>
+              <input
+                type="search"
+                value={fontQuery}
+                onChange={(event) => setFontQuery(event.target.value)}
+                placeholder={cfg.fontSearch}
+                className="w-full rounded-xl border border-border bg-bg px-3 py-2 text-sm text-fg outline-none placeholder:text-fg-subtle focus-visible:border-border-strong"
+              />
+            </label>
+            <div
+              role="radiogroup"
+              aria-label={cfg.fontLabel}
+              className="mt-2 max-h-52 overflow-y-auto rounded-xl border border-border"
+            >
+              {filteredFonts.length === 0 ? (
+                <p className="px-3 py-4 text-xs text-fg-muted">{cfg.fontEmpty}</p>
+              ) : (
+                filteredFonts.map((font) => {
+                  const isActive = font.id === pageFontId;
 
-                return (
-                  <button
-                    key={id}
-                    type="button"
-                    role="radio"
-                    aria-checked={isActive}
-                    onClick={() => setFontPack(id)}
-                    className={
-                      isActive
-                        ? "flex items-center gap-3 rounded-xl border border-accent bg-accent-subtle px-3 py-2.5 text-left"
-                        : "flex items-center gap-3 rounded-xl border border-border px-3 py-2.5 text-left transition hover:border-border-strong"
-                    }
-                  >
-                    <span
-                      aria-hidden
-                      data-font-pack={id}
-                      className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-bg-inset font-display text-lg font-bold"
-                      style={{
-                        fontFamily:
-                          id === "signal"
-                            ? "var(--font-pack-signal-display), sans-serif"
-                            : id === "atelier"
-                              ? "var(--font-pack-atelier-display), serif"
-                              : "var(--font-pack-ledger-display), serif",
-                      }}
+                  return (
+                    <button
+                      key={font.id}
+                      type="button"
+                      role="radio"
+                      aria-checked={isActive}
+                      onClick={() => setPageFontId(font.id)}
+                      className={
+                        isActive
+                          ? "flex w-full items-center gap-3 border-b border-border bg-accent-subtle px-3 py-2.5 text-left last:border-b-0"
+                          : "flex w-full items-center gap-3 border-b border-border px-3 py-2.5 text-left transition last:border-b-0 hover:bg-bg-inset"
+                      }
                     >
-                      {meta.displaySample}
-                    </span>
-                    <span className="min-w-0">
-                      <span className="block text-sm font-semibold text-fg">
-                        {copy.name}
+                      <span
+                        aria-hidden
+                        className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-bg-inset text-base font-semibold"
+                        style={{ fontFamily: `"${font.family}", sans-serif` }}
+                      >
+                        Aa
                       </span>
-                      <span className="mt-0.5 block truncate text-xs text-fg-muted">
-                        {copy.description}
+                      <span className="min-w-0">
+                        <span
+                          className="block truncate text-sm font-semibold text-fg"
+                          style={{ fontFamily: `"${font.family}", sans-serif` }}
+                        >
+                          {font.family}
+                        </span>
+                        <span className="mt-0.5 block font-mono text-[0.65rem] tracking-wider text-fg-subtle uppercase">
+                          {font.category}
+                        </span>
                       </span>
-                    </span>
-                  </button>
-                );
-              })}
+                    </button>
+                  );
+                })
+              )}
             </div>
           </section>
         </div>

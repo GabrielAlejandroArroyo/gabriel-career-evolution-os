@@ -90,8 +90,7 @@
   --font-mono: var(--font-mono-face);
 
   /*
-   * Fluid type scale shared across font packs. Pack-specific optical
-   * tweaks live under [data-font-pack] below.
+   * Fluid type scale. Active page font is set via --page-font (config / boot).
    */
   --text-hero: clamp(2.9rem, 1.1rem + 7.2vw, 6.85rem);
   --text-hero--line-height: 0.98;
@@ -111,32 +110,14 @@
 }
 
 /*
- * Font pack wiring. next/font injects --font-pack-* variables on <html>;
- * the active pack remaps the semantic faces used by body / utilities.
+ * Page typography: --page-font is assigned at runtime (Google Fonts).
+ * Mono stays self-hosted via next/font (--font-pack-mono).
  */
-:root,
-html[data-font-pack="signal"] {
-  --font-display-face: var(--font-pack-signal-display);
-  --font-sans-face: var(--font-pack-signal-sans);
+:root {
+  --page-font: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-display-face: var(--page-font);
+  --font-sans-face: var(--page-font);
   --font-mono-face: var(--font-pack-mono);
-}
-
-html[data-font-pack="atelier"] {
-  --font-display-face: var(--font-pack-atelier-display);
-  --font-sans-face: var(--font-pack-atelier-sans);
-  --font-mono-face: var(--font-pack-mono);
-  --text-hero--letter-spacing: -0.025em;
-  --text-display--letter-spacing: -0.018em;
-  --text-title--letter-spacing: -0.012em;
-}
-
-html[data-font-pack="ledger"] {
-  --font-display-face: var(--font-pack-ledger-display);
-  --font-sans-face: var(--font-pack-ledger-sans);
-  --font-mono-face: var(--font-pack-mono);
-  --text-hero--letter-spacing: -0.02em;
-  --text-display--letter-spacing: -0.014em;
-  --text-title--letter-spacing: -0.01em;
 }
 
 @layer base {
@@ -152,7 +133,7 @@ html[data-font-pack="ledger"] {
   body {
     background-color: var(--bg);
     color: var(--fg);
-    font-family: var(--font-sans-face), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-sans-face);
     font-size: 1.015rem;
     line-height: 1.65;
     letter-spacing: -0.011em;
@@ -168,13 +149,6 @@ html[data-font-pack="ledger"] {
     font-optical-sizing: auto;
   }
 
-  html[data-font-pack="atelier"] h1,
-  html[data-font-pack="atelier"] h2,
-  html[data-font-pack="atelier"] h3,
-  html[data-font-pack="atelier"] .font-display {
-    font-feature-settings: "SOFT" 50, "WONK" 0;
-  }
-
   :focus-visible {
     outline: 2px solid var(--ring);
     outline-offset: 3px;
@@ -187,7 +161,7 @@ html[data-font-pack="ledger"] {
 }
 
 @utility font-display {
-  font-family: var(--font-display-face), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-display-face);
 }
 
 @utility font-mono {

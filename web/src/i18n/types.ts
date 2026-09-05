@@ -48,11 +48,8 @@ export type Dictionary = {
     themeLight: string;
     themeDark: string;
     fontLabel: string;
-    fontPacks: {
-      signal: { name: string; description: string };
-      atelier: { name: string; description: string };
-      ledger: { name: string; description: string };
-    };
+    fontSearch: string;
+    fontEmpty: string;
   };
 
   hero: {
