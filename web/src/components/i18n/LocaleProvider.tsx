@@ -6,7 +6,7 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState,
+  useSyncExternalStore,
   type ReactNode,
 } from "react";
 import {
@@ -27,9 +27,29 @@ type LocaleContextValue = {
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
-function readInitialLocale(): Locale {
-  if (typeof window === "undefined") return "es";
+let storeLocale: Locale = "es";
+const listeners = new Set<() => void>();
 
+function emit() {
+  for (const listener of listeners) listener();
+}
+
+function subscribe(listener: () => void) {
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+}
+
+function getSnapshot(): Locale {
+  return storeLocale;
+}
+
+function getServerSnapshot(): Locale {
+  return "es";
+}
+
+function readBrowserLocale(): Locale {
   try {
     const fromQuery = new URLSearchParams(window.location.search).get("lang");
     if (isLocale(fromQuery)) return fromQuery;
@@ -58,25 +78,33 @@ function applyHtmlLang(locale: Locale) {
   document.documentElement.lang = localeMeta[locale].htmlLang;
 }
 
+function writeLocale(next: Locale) {
+  storeLocale = next;
+  try {
+    window.localStorage.setItem(STORAGE_KEY, next);
+  } catch {
+    /* ignore */
+  }
+  syncUrl(next);
+  applyHtmlLang(next);
+  emit();
+}
+
 export function LocaleProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("es");
+  const locale = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   useEffect(() => {
-    const initial = readInitialLocale();
-    setLocaleState(initial);
-    applyHtmlLang(initial);
-    syncUrl(initial);
+    const initial = readBrowserLocale();
+    if (initial !== storeLocale) {
+      storeLocale = initial;
+      emit();
+    }
+    applyHtmlLang(storeLocale);
+    syncUrl(storeLocale);
   }, []);
 
   const setLocale = useCallback((next: Locale) => {
-    setLocaleState(next);
-    try {
-      window.localStorage.setItem(STORAGE_KEY, next);
-    } catch {
-      /* ignore */
-    }
-    syncUrl(next);
-    applyHtmlLang(next);
+    writeLocale(next);
   }, []);
 
   const value = useMemo<LocaleContextValue>(
