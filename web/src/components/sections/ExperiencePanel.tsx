@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import type { CompanyId } from "@/data/companies";
-import { getCompany } from "@/data/companies";
+import { companies, getCompany } from "@/data/companies";
 import type { Dictionary } from "@/i18n";
 import { CompanyExperienceCard } from "@/components/sections/CompanyExperienceCard";
 import { Credentials } from "@/components/sections/Credentials";
@@ -14,6 +14,8 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 
 const EXPERIENCE_HASH = /^#experience(?:-(.+))?$/;
+
+const PREVIEW_IDS: CompanyId[] = ["accusys", "ypf", "inetum", "banco-ciudad"];
 
 /**
  * Master disclosure for depth content. Hash links from the logo dock
@@ -51,6 +53,7 @@ export function ExperiencePanel({ dict }: { dict: Dictionary }) {
   }, [isOpen, activeCompanyId]);
 
   const activeCompany = activeCompanyId ? getCompany(activeCompanyId) : undefined;
+  const previewCompanies = PREVIEW_IDS.map((id) => getCompany(id)).filter(Boolean);
 
   return (
     <Section id="experience" density="compact" className="border-t border-border scroll-mt-28">
@@ -74,6 +77,38 @@ export function ExperiencePanel({ dict }: { dict: Dictionary }) {
           </button>
         </div>
       </Reveal>
+
+      {!isOpen ? (
+        <Reveal delay={80}>
+          <div className="mt-6 rounded-2xl border border-border bg-bg-elevated px-5 py-5 md:px-6">
+            <p className="eyebrow text-fg-subtle">{copy.previewLabel}</p>
+            <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+              {previewCompanies.map((company) => {
+                if (!company) return null;
+                const item = copy.companies[company.id];
+                return (
+                  <li key={company.id}>
+                    <a
+                      href={`#experience-${company.id}`}
+                      className="block rounded-xl border border-transparent px-3 py-2 transition hover:border-border hover:bg-bg-inset"
+                    >
+                      <span className="block text-sm font-semibold text-fg">
+                        {company.name}
+                      </span>
+                      <span className="mt-0.5 block text-xs text-fg-muted text-pretty">
+                        {item.role}
+                      </span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+            <p className="mt-3 font-mono text-[0.65rem] tracking-wider text-fg-subtle uppercase">
+              {companies.length} · {copy.expand}
+            </p>
+          </div>
+        </Reveal>
+      ) : null}
 
       {isOpen ? (
         <div

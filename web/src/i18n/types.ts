@@ -33,6 +33,7 @@ export type Dictionary = {
   nav: {
     skipToContent: string;
     expertise: string;
+    experience: string;
     portfolio: string;
     presence: string;
     contact: string;
@@ -104,6 +105,7 @@ export type Dictionary = {
     expand: string;
     collapse: string;
     viaLabel: string;
+    previewLabel: string;
     companies: Record<
       CompanyId,
       {
@@ -165,6 +167,8 @@ export type Dictionary = {
     viewDemo: string;
     languagesLabel: string;
     repoHint: string;
+    noDemoHint: string;
+    openRepo: string;
     items: Record<ProjectId, { title: string; summary: string; detail: string }>;
   };
 

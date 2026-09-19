@@ -10,9 +10,11 @@ export function Presence({ dict }: { dict: Dictionary }) {
   const copy = dict.presence;
   const presence = linkedInPresence;
   const [isOpen, setIsOpen] = useState(false);
+  const featuredRec = presence.recommendations[0];
+  const featuredHighlights = presence.highlights.slice(0, 2);
 
   return (
-    <Section id="presence" density="compact">
+    <Section id="presence" density="compact" className="scroll-mt-28">
       <SectionHeading
         eyebrow={copy.eyebrow}
         heading={copy.heading}
@@ -39,6 +41,26 @@ export function Presence({ dict }: { dict: Dictionary }) {
                 value={presence.connections}
               />
             </dl>
+
+            <blockquote className="mt-6 rounded-xl border border-border bg-bg px-4 py-4">
+              <p className="text-sm leading-relaxed text-fg-muted text-pretty">
+                “{copy.recommendations[featuredRec.id]}”
+              </p>
+              <footer className="mt-2 font-mono text-xs tracking-wider text-fg-subtle uppercase">
+                — {featuredRec.author}
+              </footer>
+            </blockquote>
+
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {featuredHighlights.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-full border border-border bg-bg px-3 py-1 text-xs text-fg"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
 
             <button
               type="button"

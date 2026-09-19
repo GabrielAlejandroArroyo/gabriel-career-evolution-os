@@ -34,11 +34,11 @@ export function Hero({ dict }: { dict: Dictionary }) {
             {dict.hero.role}
           </p>
 
-          <p className="enter mt-4 max-w-2xl text-lead text-fg-muted text-pretty">
+          <p className="enter mt-4 max-w-2xl text-lead text-fg-muted text-pretty" style={{ animationDelay: "80ms" }}>
             {dict.hero.tagline}
           </p>
 
-          <div className="enter mt-7 flex flex-wrap gap-3">
+          <div className="enter mt-7 flex flex-wrap gap-3" style={{ animationDelay: "140ms" }}>
             <a
               href="#contact"
               className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-fg transition hover:bg-accent-hover"
@@ -46,7 +46,7 @@ export function Hero({ dict }: { dict: Dictionary }) {
               {dict.hero.primaryCta}
             </a>
             <a
-              href="#expertise"
+              href="#experience"
               className="inline-flex items-center justify-center rounded-full border border-border-strong px-6 py-3 text-sm font-semibold text-fg transition hover:bg-bg-inset"
             >
               {dict.hero.secondaryCta}

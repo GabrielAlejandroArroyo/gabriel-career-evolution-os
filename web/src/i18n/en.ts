@@ -18,6 +18,7 @@ export const en: Dictionary = {
   nav: {
     skipToContent: "Skip to content",
     expertise: "Expertise",
+    experience: "Experience",
     portfolio: "Projects",
     presence: "LinkedIn",
     contact: "Contact",
@@ -41,9 +42,9 @@ export const en: Dictionary = {
     availability: "Available for architecture roles",
     role: "Software & Solution Architect",
     tagline:
-      "I solve mission-critical systems end to end: map the domain, design the change, ship to production and modernize without shutting the business down. Banking (COBIS), ECM (Documentum), enterprise integration and governed generative AI.",
+      "Banking (COBIS), Documentum modernization and enterprise integration — from analysis to production, with governed GenAI.",
     primaryCta: "Contact me",
-    secondaryCta: "View expertise",
+    secondaryCta: "View experience",
   },
 
   metrics: {
@@ -59,7 +60,7 @@ export const en: Dictionary = {
     headlineEmphasis: "understand the domain, bound the risk, deliver in production.",
     body: "I do not start from the diagram: I start from the system that already generates revenue. In banking, energy, insurance and retail I rebuilt the domain, isolated the core and designed coexistence between legacy and new. I apply the same logic to cloud and generative AI with explicit data boundaries.",
     formula: ["Enterprise", "Architecture", "Banking", "Cloud", "Generative AI"],
-    result: "Differentiation",
+    result: "Delivery in regulated production",
   },
 
   capabilities: {
@@ -124,6 +125,7 @@ export const en: Dictionary = {
     expand: "Show experience",
     collapse: "Hide experience",
     viaLabel: "Delivered through",
+    previewLabel: "Recent roles",
     companies: {
       accusys: {
         role: "Development, analysis, design · Tech lead · Generative AI",
@@ -438,6 +440,8 @@ export const en: Dictionary = {
     viewDemo: "Live demo",
     languagesLabel: "Stack",
     repoHint: "Code on GitHub (optional)",
+    noDemoHint: "Lab without an embedded demo: open the repo to see the method in code.",
+    openRepo: "Open repository",
     items: {
       careerOs: {
         title: "Gabriel Career Evolution OS",

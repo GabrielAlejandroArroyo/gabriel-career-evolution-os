@@ -34,6 +34,9 @@ export function Proof({ dict }: { dict: Dictionary }) {
               {differentiation.headlineEmphasis}
             </span>
           </p>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-fg-muted text-pretty">
+            {differentiation.body}
+          </p>
           <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 font-display text-base font-semibold tracking-tight md:text-lg">
             {differentiation.formula.map((factor, index) => (
               <span key={factor} className="inline-flex items-center gap-3">

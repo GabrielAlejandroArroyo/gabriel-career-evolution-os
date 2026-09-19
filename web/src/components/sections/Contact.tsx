@@ -7,7 +7,11 @@ export function Contact({ dict }: { dict: Dictionary }) {
   const copy = dict.contact;
 
   return (
-    <Section id="contact" density="compact" className="border-t border-border bg-bg text-fg">
+    <Section
+      id="contact"
+      density="compact"
+      className="scroll-mt-28 border-t border-border bg-bg pb-[calc(var(--logo-dock-height)+2.5rem)] text-fg"
+    >
       <Reveal>
         <p className="eyebrow text-accent">{copy.eyebrow}</p>
         <h2 className="mt-3 max-w-3xl font-display text-title font-bold tracking-[var(--text-title--letter-spacing)] text-balance md:text-display md:tracking-[var(--text-display--letter-spacing)]">

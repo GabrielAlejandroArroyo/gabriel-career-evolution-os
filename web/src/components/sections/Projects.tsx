@@ -132,10 +132,28 @@ export function Projects({ dict }: { dict: Dictionary }) {
                 />
               </div>
             ) : (
-              <div className="flex items-center border-t border-border px-6 py-10 text-sm text-fg-muted lg:border-t-0 lg:border-l md:px-8">
-                <p>
-                  {activeCopy.detail}
+              <div className="flex flex-col justify-center gap-5 border-t border-border px-6 py-10 lg:border-t-0 lg:border-l md:px-8">
+                <p className="text-sm leading-relaxed text-fg-muted text-pretty">
+                  {copy.noDemoHint}
                 </p>
+                <div className="flex flex-wrap gap-2">
+                  {active.languages.map((language) => (
+                    <span
+                      key={language}
+                      className="rounded-full border border-border bg-bg-inset px-3 py-1.5 font-mono text-xs tracking-wider text-fg uppercase"
+                    >
+                      {language}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href={active.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-fit items-center justify-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-fg transition hover:bg-accent-hover"
+                >
+                  {copy.openRepo} →
+                </a>
               </div>
             )}
           </div>

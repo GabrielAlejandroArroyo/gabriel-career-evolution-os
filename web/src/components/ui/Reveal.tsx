@@ -27,7 +27,7 @@ export function Reveal({ children, delay = 0, className = "" }: RevealProps) {
         setIsVisible(true);
         observer.disconnect();
       },
-      { threshold: 0.1, rootMargin: "0px 0px -64px 0px" },
+      { threshold: 0.08, rootMargin: "0px 0px -12% 0px" },
     );
 
     observer.observe(element);

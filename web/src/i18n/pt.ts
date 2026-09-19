@@ -18,6 +18,7 @@ export const pt: Dictionary = {
   nav: {
     skipToContent: "Ir para o conteúdo",
     expertise: "Expertise",
+    experience: "Experiência",
     portfolio: "Projetos",
     presence: "LinkedIn",
     contact: "Contato",
@@ -41,9 +42,9 @@ export const pt: Dictionary = {
     availability: "Disponível para papéis de arquitetura",
     role: "Software & Solution Architect",
     tagline:
-      "Resolvo sistemas críticos de ponta a ponta: mapeio o domínio, desenho a mudança, levo à produção e modernizo sem desligar o negócio. Banca (COBIS), ECM (Documentum), integração enterprise e IA generativa com governança.",
+      "Banca (COBIS), modernização Documentum e integração enterprise — da análise à produção, com GenAI governada.",
     primaryCta: "Contatar",
-    secondaryCta: "Ver expertise",
+    secondaryCta: "Ver experiência",
   },
 
   metrics: {
@@ -59,7 +60,7 @@ export const pt: Dictionary = {
     headlineEmphasis: "entender o domínio, delimitar o risco e entregar em produção.",
     body: "Não parto do diagrama: parto do sistema que já gera receita. Em banca, energia, seguros e retail reconstruí o domínio, isolei o núcleo e desenhei convivência entre legacy e o novo. A mesma lógica aplico hoje a cloud e IA generativa com limites de dados explícitos.",
     formula: ["Enterprise", "Arquitetura", "Banking", "Cloud", "IA generativa"],
-    result: "Diferenciação",
+    result: "Entrega em produção regulada",
   },
 
   capabilities: {
@@ -124,6 +125,7 @@ export const pt: Dictionary = {
     expand: "Ver experiência",
     collapse: "Ocultar experiência",
     viaLabel: "Prestando serviços por",
+    previewLabel: "Papéis recentes",
     companies: {
       accusys: {
         role: "Desenvolvimento, analista, design · Líder técnico · IA generativa",
@@ -438,6 +440,8 @@ export const pt: Dictionary = {
     viewDemo: "Demo ao vivo",
     languagesLabel: "Stack",
     repoHint: "Código no GitHub (opcional)",
+    noDemoHint: "Lab sem demo embutida: abra o repo para ver o método em código.",
+    openRepo: "Abrir repositório",
     items: {
       careerOs: {
         title: "Gabriel Career Evolution OS",
