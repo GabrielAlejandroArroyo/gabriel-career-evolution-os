@@ -41,6 +41,18 @@ export function CompanyExperienceCard({ company, dict }: CompanyExperienceCardPr
           <p className="mt-3 text-sm leading-relaxed text-fg-muted text-pretty">
             {copy.summary}
           </p>
+          {copy.solved.length > 0 ? (
+            <ul className="mt-4 space-y-2 border-t border-border pt-4">
+              {copy.solved.map((item) => (
+                <li
+                  key={item}
+                  className="relative pl-4 text-sm leading-relaxed text-fg text-pretty before:absolute before:left-0 before:top-[0.55em] before:size-1.5 before:rounded-full before:bg-accent"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
       </div>
     </article>

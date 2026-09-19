@@ -41,7 +41,7 @@ export const es: Dictionary = {
     availability: "Disponible para roles de arquitectura",
     role: "Software & Solution Architect",
     tagline:
-      "+20 años en sistemas enterprise y transaccionales: banca, integración, modernización legacy, cloud e IA generativa. Experiencia end-to-end, del diseño a producción.",
+      "Resuelvo sistemas críticos con el ciclo completo: analizo el dominio, diseño el cambio, lo llevo a producción y lo modernizo sin apagar el negocio. Banca (COBIS), ECM (Documentum), integración enterprise e IA generativa con gobernanza.",
     primaryCta: "Contactar",
     secondaryCta: "Ver expertise",
   },
@@ -55,9 +55,9 @@ export const es: Dictionary = {
 
   differentiation: {
     eyebrow: "Propuesta de valor",
-    headlineLead: "Arquitecto con base hands-on:",
-    headlineEmphasis: "del código en producción a la decisión de arquitectura.",
-    body: "Recorrí el ciclo completo: desarrollo, integración, soporte productivo y modernización de sistemas críticos. Esa experiencia operativa respalda decisiones de arquitectura viables, auditables y sostenibles en producción.",
+    headlineLead: "Cómo lo resuelvo:",
+    headlineEmphasis: "entender el dominio, acotar el riesgo y entregar en producción.",
+    body: "No parto del diagrama: parto del sistema que ya factura. En banca, energía, seguros y retail reconstruí el dominio, aislé el núcleo y diseñé convivencia entre legacy y lo nuevo. Esa misma lógica hoy la aplico a cloud e IA generativa con límites de datos explícitos.",
     formula: ["Enterprise", "Arquitectura", "Banking", "Cloud", "IA generativa"],
     result: "Diferenciación",
   },
@@ -66,52 +66,52 @@ export const es: Dictionary = {
     eyebrow: "Especialización",
     heading: "Áreas de expertise",
     intro:
-      "Cuatro frentes donde aporto valor directo. Cada uno incluye problema, enfoque y resultado.",
+      "Cuatro frentes con el mismo método: problema real de cliente, decisión técnica y resultado operable. Cada uno anclado a trayectoria concreta.",
     expand: "Ver detalle",
     collapse: "Ocultar",
     challengeLabel: "El problema",
-    approachLabel: "Mi enfoque",
+    approachLabel: "Cómo lo resolví",
     outcomeLabel: "El resultado",
     items: {
       legacyModernization: {
         title: "Modernización de sistemas legacy",
         teaser: "Migración por etapas sin interrumpir la operación.",
         challenge:
-          "Aplicaciones que sostienen el negocio hace 15 años, sin documentación viva, donde cada cambio asusta y nadie quiere firmar la migración.",
+          "En YPF sostuve Documentum durante años (Content Server, WDK, Webtop, workflows) y migraciones 7.0→21.2: un ECM crítico sin documentación viva donde un big bang no era opción. En retail (Nike, Coto) el legacy ya facturaba con miles de usuarios.",
         approach:
-          "Reconstruyo el dominio real antes de tocar una línea. Aíslo el núcleo transaccional, defino límites explícitos y planteo una migración por etapas con convivencia entre lo viejo y lo nuevo.",
+          "Reconstruyo el dominio real antes de tocar código. Aíslo el núcleo, defino límites explícitos y planteo convivencia entre lo viejo y lo nuevo — laboratorio Docker/Postgres incluido cuando hace falta validar el salto de versión.",
         outcome:
-          "Un camino de modernización que el negocio puede aprobar porque nunca depende de un big bang ni de apagar lo que hoy factura.",
+          "Un camino de modernización que el negocio puede aprobar: el sistema sigue operando mientras se evoluciona, sin depender de apagar lo que hoy sostiene la operación.",
       },
       enterpriseIntegration: {
         title: "Integración enterprise",
         teaser: "Contratos explícitos, errores visibles y trazabilidad auditable.",
         challenge:
-          "Core bancario, ERP, gestión documental, servicios externos y procesos batch que deben coordinarse sin perder consistencia ni trazabilidad.",
+          "En MAPFRE (SGA) y BanBif había que conectar Documentum/xCP con capas REST/SOAP. En Claro, PORTANODE debía coordinar portabilidad entre países. En La Anónima, portal Angular + Spring/Oracle con flujos operativos diarios.",
         approach:
-          "Diseño contratos de integración explícitos sobre REST y SOAP, separo lo síncrono de lo que debe ser batch o asíncrono, y hago que los errores sean visibles y recuperables en lugar de silenciosos.",
+          "Diseño contratos explícitos REST/SOAP, separo lo síncrono de batch/asíncrono y hago los errores visibles y recuperables. En Inetum sumé BPM (Bizagi) cuando el proceso de negocio era el contrato real.",
         outcome:
-          "Integraciones que se pueden auditar, reprocesar y explicar cuando el negocio pregunta qué pasó con una transacción puntual.",
+          "Integraciones que se pueden auditar, reprocesar y explicar cuando el negocio pregunta qué pasó con una transacción o un expediente puntual.",
       },
       bankingCore: {
         title: "Core bancario y sistemas transaccionales",
         teaser: "Consistencia, idempotencia y trazabilidad en entornos regulados.",
         challenge:
-          "Plataformas donde una inconsistencia no es un bug: es dinero real, un cierre contable roto y una respuesta al regulador.",
+          "En Accusys y bancos (Ciudad, Macro, Patagonia, Facebank) cada requerimiento toca COBIS Pasivas: inconsistencia no es un bug, es dinero, cierre y regulación.",
         approach:
-          "Trabajo desde el conocimiento concreto de COBIS, procesos batch y ciclos de cierre. Priorizo consistencia, idempotencia y trazabilidad por encima de la elegancia arquitectónica.",
+          "Ciclo análisis → diseño → desarrollo adaptado al stack de cada banco (C#/.NET, Java, VB6, SQL/T-SQL, SH, SQR). Priorizo consistencia, idempotencia y trazabilidad por encima de la elegancia del diagrama.",
         outcome:
-          "Decisiones técnicas que soportan volumen y auditoría, tomadas por alguien que entiende el impacto contable y no solo el diagrama.",
+          "Cambios entregables en el core que el banco puede operar y auditar, hechos por alguien que entiende el impacto contable y no solo el servicio HTTP.",
       },
       genAiAdoption: {
         title: "IA generativa enterprise",
         teaser: "RAG y agentes con gobernanza de datos, listos para producción.",
         challenge:
-          "Organizaciones que quieren aprovechar GenAI pero no pueden exponer datos sensibles ni sostener una demo que nunca llega a producción.",
+          "En Accusys el área bancaria necesita conocimiento corporativo asistido por IA sin exponer datos sensibles ni quedarse en una demo que nunca llega a producción.",
         approach:
-          "Diseño arquitecturas RAG con límites de datos claros, evalúo cuándo un agente aporta valor real y cuándo es sobreingeniería, y mantengo el proveedor de IA desacoplado detrás de un puerto.",
+          "Diseño plataforma de conocimiento con AWS Bedrock, límites de datos claros, evaluación de cuándo un agente aporta valor real, y proveedor desacoplado detrás de un puerto — misma disciplina que en integración enterprise.",
         outcome:
-          "Capacidades de IA que se integran al stack existente con control de acceso y costo, en lugar de sumar otro silo.",
+          "Capacidad de GenAI integrable al stack existente con control de acceso y costo, en lugar de sumar otro silo experimental.",
       },
     },
   },
@@ -120,7 +120,7 @@ export const es: Dictionary = {
     eyebrow: "Trayectoria",
     heading: "Experiencia profesional",
     intro:
-      "Skills, stack tecnológico, trayectoria, industrias y formación.",
+      "Cómo resolví problemas en cada contexto: situación, decisión técnica y resultado operable.",
     expand: "Ver experiencia",
     collapse: "Ocultar experiencia",
     viaLabel: "Prestando servicios desde",
@@ -129,85 +129,155 @@ export const es: Dictionary = {
         role: "Desarrollo, analista, diseño · Líder técnico · IA generativa",
         period: "Junio 2023 — Actual",
         summary:
-          "En Accusys combino backend/frontend sobre COBIS (módulo Pasivas) para banca, liderazgo técnico de una app fullstack COCOMO (.NET 8 + Angular + Docker) y el diseño de una plataforma de conocimiento corporativo con AWS Bedrock para el área bancaria.",
+          "En Accusys combino tres frentes: entrega en core bancario COBIS Pasivas, liderazgo técnico de una app fullstack y diseño de conocimiento corporativo con GenAI.",
+        solved: [
+          "Había que sostener banca y a la vez modernizar el stack: lideré COCOMO (.NET 8 + Angular + Docker) con criterios de arquitectura aplicables al día a día.",
+          "El área bancaria necesitaba conocimiento asistido sin filtrar datos sensibles: diseñé la plataforma sobre AWS Bedrock con límites de acceso explícitos.",
+          "Los bancos clientes exigían ciclo completo por requerimiento: unifiqué análisis, diseño y desarrollo para no entregar “código suelto” al core.",
+        ],
       },
       "banco-ciudad": {
         role: "Desarrollo, análisis y diseño — COBIS Pasivas",
         period: "Junio 2023 — Actual",
         summary:
-          "Cliente Accusys. Ante cada requerimiento: análisis, diseño y desarrollo en el core bancario COBIS (módulo Pasivas), con C#, MVC, .NET, Java, VB6, SQL/T-SQL, scripts SH y SQR según el contexto del banco.",
+          "Cliente Accusys. Entrega end-to-end sobre COBIS Pasivas en el stack heterogéneo del banco.",
+        solved: [
+          "Cada pedido llegaba sin un diseño único: armé el ciclo análisis → diseño → desarrollo antes de tocar Pasivas.",
+          "El stack mezcla C#, MVC, .NET, Java, VB6, SQL/T-SQL, SH y SQR: adapto la solución al contexto real del banco, no a un stack ideal.",
+          "El riesgo era romper consistencia en el core: priorizo trazabilidad y cambios acotados sobre reescrituras amplias.",
+        ],
       },
       "banco-macro": {
         role: "Desarrollo, análisis y diseño — COBIS Pasivas",
         period: "Junio 2023 — Actual",
         summary:
-          "Cliente Accusys. Implementación de cambios en Pasivas del core COBIS: análisis funcional/técnico y desarrollo backend/frontend adaptado al stack del banco (C#/.NET, Java, SQL).",
+          "Cliente Accusys. Cambios funcionales y técnicos en Pasivas alineados al stack de Macro.",
+        solved: [
+          "Había que traducir pedido de negocio a cambio seguro en el core: separo análisis funcional del diseño técnico antes de codear.",
+          "Backend y frontend conviven en C#/.NET, Java y SQL: entrego cortes verticales que el banco puede probar en su entorno.",
+          "Evito “parches locales”: dejo el cambio auditable para operaciones y cierre.",
+        ],
       },
       "banco-patagonia": {
         role: "Desarrollo, análisis y diseño — COBIS Pasivas",
         period: "Junio 2023 — Actual",
         summary:
-          "Cliente Accusys. Análisis, diseño y desarrollo sobre COBIS Pasivas para Patagonia, alineando el entregable al stack y a los procesos del banco.",
+          "Cliente Accusys. Entregas en COBIS Pasivas alineadas a procesos y stack de Patagonia.",
+        solved: [
+          "Los procesos del banco no admiten un entregable genérico: adapto diseño y desarrollo a su forma de operar Pasivas.",
+          "Alineo el cambio con el ciclo de análisis–diseño–desarrollo para reducir ida y vuelta con el negocio.",
+          "Mantengo el foco en Pasivas sin arrastrar deuda innecesaria a módulos vecinos.",
+        ],
       },
       facebank: {
         role: "Desarrollo, análisis y diseño — COBIS Pasivas",
         period: "Junio 2023 — Actual",
         summary:
-          "Cliente Accusys. Desarrollo e integración de requerimientos en el core bancario COBIS (Pasivas) para Facebank, con el mismo ciclo de análisis–diseño–desarrollo.",
+          "Cliente Accusys. Integración de requerimientos en el core COBIS (Pasivas) para Facebank.",
+        solved: [
+          "Los requerimientos debían entrar al core sin romper integraciones existentes: diseño primero el encaje en Pasivas.",
+          "Aplico el mismo ciclo análisis–diseño–desarrollo para que Facebank reciba cambios listos para su operatoria.",
+          "Priorizo integración limpia al módulo Pasivas frente a soluciones laterales difíciles de operar.",
+        ],
       },
       ypf: {
         role: "Desarrollo Documentum · Frontend/Backend · Analista funcional",
         period: "2003 / 2008 — Mayo 2023",
         summary:
-          "Cliente Inetum/IECISA. Años de trabajo en gestión documental YPF: Documentum (Content Server, WDK, Webtop, workflows), migraciones 7.0→21.2, laboratorio Docker/Postgres, apps Java/C#/React/Angular/Node y sistemas Invesdoc/Invesflow en múltiples países.",
+          "Cliente Inetum/IECISA. Gestión documental YPF a escala: Documentum, migraciones mayores y apps alrededor del ECM.",
+        solved: [
+          "Migrar 7.0→21.2 sin apagar el ECM: validé el salto en laboratorio Docker/Postgres y planifiqué convivencia por etapas.",
+          "Content Server, WDK, Webtop y workflows sin documentación viva: reconstruí el dominio y sostuve evolución + incidentes.",
+          "El negocio necesitaba apps encima del ECM: entregué Java/C#/React/Angular/Node e Invesdoc/Invesflow en varios países.",
+        ],
       },
       inetum: {
         role: "Desarrollo, análisis, diseño, instalación · Consultoría Bizagi",
         period: "Enero 2021 — Mayo 2023 (ex IECISA)",
         summary:
-          "En Inetum (ex Informática El Corte Inglés) lideré entregas Documentum/BPM para clientes enterprise, demos comerciales Bizagi e integración de soluciones documentales y de procesos en la región.",
+          "En Inetum (ex IECISA) lideré entregas Documentum/BPM y demos Bizagi para clientes enterprise en la región.",
+        solved: [
+          "Había que vender y entregar proceso + documento: uní consultoría Bizagi con implementación Documentum real.",
+          "Coordiné instalación, análisis y desarrollo para que la demo comercial no se desconectara de la solución productiva.",
+          "Estandaricé entregas regionales sin perder el contexto de cada cliente.",
+        ],
       },
       techint: {
         role: "Desarrollo evolutivo Documentum / Webtop",
         period: "Enero 2018 — Enero 2021",
         summary:
-          "Cliente IECISA. Desarrollo evolutivo Documentum 6.7/Webtop: nuevas funcionalidades y corrección de incidencias en Java y C#.",
+          "Cliente IECISA. Evolutivo e incidentes sobre Documentum 6.7 / Webtop en Java y C#.",
+        solved: [
+          "El ECM debía evolucionar sin proyectos greenfield: entregué features e incidentes sobre Documentum 6.7/Webtop.",
+          "Separé correcciones urgentes de mejoras evolutivas para no mezclar riesgo en el mismo release.",
+          "Trabajé en Java y C# según la capa afectada, manteniendo estabilidad operativa.",
+        ],
       },
       "la-anonima": {
         role: "Desarrollo, análisis y diseño — portal de transportes",
         period: "Septiembre 2020 — Mayo 2023",
         summary:
-          "Cliente Inetum. Portal de transportes La Anónima: Angular 10 + Java Spring / Oracle, con Spring Tool Suite, JPA Hibernate y Java 8.",
+          "Cliente Inetum. Portal de transportes Angular 10 + Java Spring / Oracle.",
+        solved: [
+          "La operación logística necesitaba un portal usable día a día: diseñé el flujo end-to-end Angular + Spring/Oracle.",
+          "Modelé persistencia con JPA/Hibernate sobre Oracle alineada al dominio de transporte.",
+          "Cerré el ciclo análisis–diseño–desarrollo para que el portal no quedara como UI desconectada del backend.",
+        ],
       },
       claro: {
         role: "Analista funcional / programador — portabilidad numérica",
         period: "Marzo 2011 — Diciembre 2011",
         summary:
-          "Cliente IECISA. Análisis, diseño y desarrollo (Java / PL-SQL) sobre PORTANODE Integrator/Gateway para portabilidad numérica en Argentina y Paraguay.",
+          "Cliente IECISA. Portabilidad numérica Argentina/Paraguay sobre PORTANODE Integrator/Gateway.",
+        solved: [
+          "Había que coordinar portabilidad entre países: analicé, diseñé y desarrollé sobre Integrator/Gateway (Java / PL-SQL).",
+          "Traté la integración como contrato explícito entre nodos, no como scripts sueltos.",
+          "Entregué cambios listos para el flujo regulado de portabilidad numérica.",
+        ],
       },
       mapfre: {
         role: "Diseño y programación de capa de servicios — SGA MAPFRE",
         period: "Agosto 2016 — Agosto 2017",
         summary:
-          "Cliente IECISA (Colombia). Capa REST/SOAP del proyecto SGA-MAPFRE con Documentum y servicios xCP 2.2, en Java y C#.",
+          "Cliente IECISA (Colombia). Capa REST/SOAP SGA-MAPFRE con Documentum y xCP 2.2.",
+        solved: [
+          "El SGA necesitaba exponer Documentum/xCP sin acoplar clientes al ECM: diseñé la capa REST/SOAP en Java y C#.",
+          "Separé contratos de servicio de la implementación Documentum para poder evolucionar cada lado.",
+          "Dejé la integración auditable para un entorno de seguros regulado.",
+        ],
       },
       coto: {
         role: "Soporte, implementación y retail (STORE FLOW / RETAIL WARE)",
         period: "1998 — 2003",
         summary:
-          "Cliente IECISA. Coordinación de soporte técnico e implementación retail: Coto (~1500 usuarios) junto a Tía, Eki y otros, con migración de sistemas y planes de prueba.",
+          "Cliente IECISA. Soporte e implementación retail a escala (~1500 usuarios en Coto) más otras cadenas.",
+        solved: [
+          "Había que sostener operación retail masiva: coordiné soporte e implementación STORE FLOW / RETAIL WARE.",
+          "Las migraciones exigían disciplina: armé planes de prueba y cortes controlados con Tía, Eki y otros.",
+          "Aprendí temprano que el legacy que factura se moderniza por etapas, no por big bang.",
+        ],
       },
       banbif: {
         role: "Consultoría Documentum · desarrollo REST / Webtop",
         period: "Febrero 2018 — Agosto 2018",
         summary:
-          "Cliente IECISA (Perú). Consultoría de mejoras en BanBif, instalación xCP 2.3, servicios REST en C# y Webtop en Java sobre Microsoft SQL Server.",
+          "Cliente IECISA (Perú). Mejoras BanBif: xCP 2.3, REST en C# y Webtop en Java sobre SQL Server.",
+        solved: [
+          "El banco necesitaba mejoras ECM concretas: instalé xCP 2.3 y cerré el gap con servicios REST + Webtop.",
+          "Expuse capacidades Documentum vía REST en C# sin forzar a los consumidores a conocer el modelo interno.",
+          "Sostuve Webtop Java sobre SQL Server alineado a la operatoria de BanBif.",
+        ],
       },
       nike: {
         role: "Analista funcional / programador — RETAIL WARE",
         period: "Enero 2004 — Octubre 2008",
         summary:
-          "Cliente IECISA. Análisis, diseño y desarrollo del sistema retail RETAIL WARE (VB6, C#, Clarion, SQL) para Nike Argentina, México y Chile, además de Puma, Dabra y Torca.",
+          "Cliente IECISA. RETAIL WARE multi-país (Nike AR/MX/CL y otras marcas) en VB6, C#, Clarion y SQL.",
+        solved: [
+          "El retail multi-país no admitía una sola variante: analicé, diseñé y desarrollé RETAIL WARE para Nike AR/MX/CL.",
+          "Extendí el mismo método a Puma, Dabra y Torca sin perder el dominio compartido.",
+          "Convencí al negocio con entregas evolutivas sobre stack legacy (VB6/C#/Clarion/SQL), no con reescritura total.",
+        ],
       },
     },
   },
@@ -362,7 +432,7 @@ export const es: Dictionary = {
     eyebrow: "Portfolio",
     heading: "Proyectos destacados",
     intro:
-      "Repositorios públicos de arquitectura, integración y producto, con demos integradas en esta página.",
+      "Labs públicos que muestran cómo resuelvo arquitectura e integración. No son casos confidenciales de cliente: son evidencia de método reproducible.",
     openPreview: "Ver en la página",
     closePreview: "Cerrar preview",
     viewDemo: "Demo en vivo",
@@ -372,42 +442,44 @@ export const es: Dictionary = {
       careerOs: {
         title: "Gabriel Career Evolution OS",
         summary:
-          "Plataforma personal de evolución profesional y esta landing multilingüe.",
+          "Problema: un CV estático no muestra cómo pensás. Solución: landing tipada, multilingüe y orientada a recruiters de arquitectura.",
         detail:
-          "Next.js 16, TypeScript y export estático a GitHub Pages. Incluye sistema de diseño, i18n tipado y secciones pensadas para conversión de recruiters hacia roles de arquitectura.",
+          "Decidí export estático (Next.js 16 + TypeScript + GitHub Pages), i18n tipado y preferencias de tema/fuente en el cliente. El resultado es un artefacto que demuestra diseño de producto + arquitectura front sin depender de un backend.",
       },
       catalogs: {
         title: "Creador de Catálogos",
         summary:
-          "App Angular + FastAPI para armar catálogos de códigos a partir de maestros.",
+          "Problema: armar catálogos de códigos desde maestros es manual y frágil. Solución: Angular + FastAPI con flujo versionado.",
         detail:
-          "Frontend publicado en GitHub Pages con CI/CD. El backend FastAPI corre en local; la UI demuestra el flujo de catálogos, versionado por specs y releases automáticos.",
+          "Separé UI publicada (GitHub Pages + CI/CD) del backend local FastAPI. El lab demuestra contratos claros entre front y API, versionado por specs y releases automáticos — el mismo criterio que uso en integraciones enterprise.",
       },
       hexagonal: {
         title: "Arquitectura Hexagonal en Java",
         summary:
-          "Referencia de Clean Architecture / hexagonal con Spring Boot.",
+          "Problema: “Clean Architecture” solo en slides. Solución: referencia Spring Boot con límites dominio/aplicación/infra.",
         detail:
-          "Organiza dominio, aplicación e infraestructura con inversión de dependencias. Sirve como evidencia concreta de cómo aplico límites explícitos fuera de un diagrama.",
+          "Organicé puertos y adaptadores con inversión de dependencias. Sirve como evidencia concreta de cómo aíslo el núcleo — el mismo reflejo que aplico al modernizar legacy o al desacoplar un proveedor de IA.",
       },
       middleware: {
         title: "Middleware Designer",
         summary:
-          "Diseño de middleware que lee OpenAPI/Swagger de servicios y orquesta MFEs.",
+          "Problema: orquestar servicios y MFEs sin contratos. Solución: middleware que lee OpenAPI/Swagger y impone convenciones.",
         detail:
-          "Monorepo con convenciones para services, middleware y microfrontends Angular. Enfocado en contratos de integración y reglas de arquitectura aplicadas en el día a día.",
+          "Monorepo con reglas para services, middleware y microfrontends Angular. El lab muestra cómo diseño integración a partir del contrato, no a partir de acoplamientos implícitos.",
       },
       springMicroservices: {
         title: "Spring Microservices",
-        summary: "Base de microservicios Spring para composición de servicios.",
+        summary:
+          "Problema: componer servicios sin patrón de configuración e integración. Solución: base Spring alineada a escenarios enterprise.",
         detail:
-          "Exploración práctica de configuración, servicios y patrones de integración en el ecosistema Spring, alineada a escenarios enterprise reales.",
+          "Exploré configuración, composición y patrones de integración en Spring. Es un sandbox para practicar lo que en banca y ECM se paga caro si se improvisa en producción.",
       },
       transportAgenda: {
         title: "Agenda de Transporte",
-        summary: "Sistema de agenda de transporte con backend Java y front TypeScript.",
+        summary:
+          "Problema: agenda logística sin dominio claro entre UI y backend. Solución: Java + TypeScript end-to-end orientado a operación.",
         detail:
-          "Solución end-to-end para gestión de agenda logística. Complementa el front en TypeScript con un backend Java orientado a dominio operacional.",
+          "Complementa el portal de transportes real (La Anónima) con un lab que separa dominio operacional del front. Evidencia de cómo modelo un flujo logístico completo sin mezclar capas.",
       },
     },
   },
@@ -426,7 +498,7 @@ export const es: Dictionary = {
     connectionsLabel: "Contactos",
     aboutLabel: "Acerca de",
     about:
-      "Arquitecto de software y soluciones con experiencia hands-on en sistemas enterprise y transaccionales. .NET, Java, OpenText Documentum, Bizagi BPM, integración y modernización legacy. Hoy llevo esa base a arquitectura moderna, cloud e IA generativa.",
+      "Arquitecto de software y soluciones que resuelve sistemas críticos con ciclo completo: análisis, diseño, producción y modernización. .NET, Java, COBIS, OpenText Documentum, Bizagi, integración enterprise e IA generativa con gobernanza. Del retail y la energía a la banca regulada.",
     highlightsLabel: "Credenciales visibles en LinkedIn",
     recommendationsLabel: "Recomendaciones",
     recommendations: {

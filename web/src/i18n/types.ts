@@ -110,6 +110,8 @@ export type Dictionary = {
         role: string;
         period: string;
         summary: string;
+        /** Situation → what I did → outcome, inferred from CV facts. */
+        solved: string[];
       }
     >;
   };
